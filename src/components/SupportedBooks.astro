@@ -1,0 +1,41 @@
+---
+const books = ['BetMGM', 'DraftKings', 'FanDuel'];
+---
+
+<section class="section">
+  <div class="container">
+    <p class="section-label">Supported Books</p>
+    <h2 class="section-title">Lines from the books you already use</h2>
+    <p class="section-subtitle">
+      BettorIndex tracks feeds from major sportsbooks. Not every market will always have all three available at the same time.
+    </p>
+
+    <div class="books">
+      {books.map((book) => (
+        <div class="book-badge">{book}</div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .book-badge {
+    flex: 1;
+    min-width: 160px;
+    padding: 24px 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+</style>

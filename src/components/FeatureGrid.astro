@@ -1,0 +1,100 @@
+---
+const features = [
+  {
+    title: 'Multi-Book Line Shopping',
+    description: 'Compare lines and prices across BetMGM, DraftKings, and FanDuel on the same prop card.',
+    tag: 'BetMGM · DraftKings · FanDuel',
+  },
+  {
+    title: 'Lean Signals',
+    description: 'See whether recent trends favor OVER, UNDER, or show no clear lean — a directional read, not a guarantee.',
+    tag: 'OVER · UNDER · No Clear Lean',
+  },
+  {
+    title: 'Market State Badges',
+    description: 'Instantly know if books agree on the line or are posting different numbers for the same market.',
+    tag: 'Same Line · Books Disagree',
+  },
+  {
+    title: 'Trend Windows',
+    description: 'Weighted hit rates across 10-day, 30-day, and 60-day windows with more weight on recent results.',
+    tag: '10D · 30D · 60D',
+  },
+  {
+    title: 'Injury Context',
+    description: 'Relevant injury information surfaced on MLB prop cards to help you understand the surrounding context.',
+    tag: 'MLB',
+  },
+  {
+    title: 'NBA & MLB Prop Markets',
+    description: 'Browse player points, assists, rebounds, batter hits, and total bases with filters and player search.',
+    tag: 'NBA · MLB',
+  },
+];
+---
+
+<section class="section section--surface" id="features">
+  <div class="container">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">Everything you need to evaluate a prop</h2>
+    <p class="section-subtitle">
+      BettorIndex combines trend data, book disagreement, and available prices into a single decision aid.
+    </p>
+
+    <div class="grid">
+      {features.map((feature) => (
+        <div class="card feature">
+          <span class="feature__tag">{feature.tag}</span>
+          <h3 class="feature__title">{feature.title}</h3>
+          <p class="feature__desc">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section--surface {
+    background: var(--surface);
+  }
+
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  .feature__tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .feature__title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .feature__desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

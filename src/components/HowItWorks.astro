@@ -1,0 +1,91 @@
+---
+const steps = [
+  {
+    number: '1',
+    title: 'Check the lean',
+    text: 'See whether recent trends favor one side or whether the market still looks too mixed.',
+  },
+  {
+    number: '2',
+    title: 'Check the market state',
+    text: 'If books disagree, shop for the better line first. If they agree, focus on price.',
+  },
+  {
+    number: '3',
+    title: 'Decide whether to play, shop, or wait',
+    text: 'The card should help you decide whether the spot looks playable now or needs a better number.',
+  },
+];
+---
+
+<section class="section" id="how-it-works">
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">How To Read BettorIndex</h2>
+    <p class="section-subtitle">A quick three-step workflow for evaluating any prop card.</p>
+
+    <div class="steps">
+      {steps.map((step) => (
+        <div class="card step">
+          <div class="step__badge">{step.number}</div>
+          <div class="step__content">
+            <h3 class="step__title">{step.title}</h3>
+            <p class="step__text">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .steps {
+    display: grid;
+    gap: 20px;
+  }
+
+  .step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step__badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+  }
+
+  .step__title {
+    margin: 0 0 6px;
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .step__text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 768px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .step {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+</style>

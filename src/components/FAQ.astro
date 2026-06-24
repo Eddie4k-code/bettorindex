@@ -1,0 +1,119 @@
+---
+const faqItems = [
+  {
+    question: 'What does Same Line Across Books mean?',
+    answer:
+      'Most books we track are offering the same line, so the main difference is the price you can get rather than the number itself.',
+  },
+  {
+    question: 'What does Books Disagree mean?',
+    answer:
+      'Books are posting different numbers or prices for the same market. In those spots, getting the better number usually matters before worrying about a small price difference.',
+  },
+  {
+    question: 'What is a lean?',
+    answer:
+      'A lean shows which side recent trends support more strongly right now. It is a decision aid, not a guarantee or a locked-in prediction.',
+  },
+  {
+    question: 'What does No Clear Lean mean?',
+    answer:
+      'The recent trend signals are too mixed or too weak to confidently favor one side. That usually means the market is better treated as a wait-or-pass spot.',
+  },
+  {
+    question: 'What is the difference between Shop the Line and Shop the Price?',
+    answer:
+      'Shop the line means books are offering different market numbers, so try to grab the better number first. Shop the price means the market number is mostly the same across books, so compare the odds instead.',
+  },
+  {
+    question: 'Why can a side lean one way but still not be playable now?',
+    answer:
+      'Recent trends can favor one side while the current odds still make the bet unattractive. A lean tells you the direction of support, not whether the current price is worth taking.',
+  },
+  {
+    question: 'Which books does BettorIndex support?',
+    answer:
+      'BettorIndex currently supports BetMGM, DraftKings, and FanDuel. The books shown on each card come from those supported feeds, and not every market will always have all three available at the same time.',
+  },
+  {
+    question: 'How does BettorIndex do the math?',
+    answer:
+      'BettorIndex uses a simple decision model, not a guarantee. It weighs recent trend data, gives more weight to newer results, compares that support to the best available odds, and checks whether books agree on the line. The goal is to flag whether a prop looks worth considering, worth shopping, or better left alone.',
+  },
+];
+---
+
+<section class="section section--surface" id="faq">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Common questions</h2>
+    <p class="section-subtitle">Terminology and concepts you'll see on every prop card.</p>
+
+    <div class="faq-list">
+      {faqItems.map((item, i) => (
+        <details class="faq-item">
+          <summary class="faq-item__question">{item.question}</summary>
+          <p class="faq-item__answer">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .faq-item__question {
+    padding: 20px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq-item__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__question::after {
+    content: '+';
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: 400;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .faq-item[open] .faq-item__question::after {
+    content: '−';
+  }
+
+  .faq-item__answer {
+    margin: 0;
+    padding: 0 24px 20px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 20px;
+  }
+</style>
