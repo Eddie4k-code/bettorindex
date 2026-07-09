@@ -1,19 +1,19 @@
 ---
 const steps = [
   {
-    number: '01',
-    title: 'Read the lean',
-    text: 'See whether recent performance favors Over or Under, and how strong that trend is.',
+    num: '1',
+    title: 'Check the lean',
+    text: 'Is the trend Over or Under?',
   },
   {
-    number: '02',
-    title: 'Read the market',
-    text: 'See whether tracked books agree on the line or are posting different numbers, and which best line and price BettorIndex surfaced for your side.',
+    num: '2',
+    title: 'Check the line',
+    text: 'One number, one price — that\'s your bet.',
   },
   {
-    number: '03',
-    title: 'Read the action',
-    text: 'The card tells you whether the spot looks playable now, needs a better line, needs a better price, or is better left alone.',
+    num: '3',
+    title: 'Check the read',
+    text: 'Play now, shop for a better number, or pass.',
   },
 ];
 ---
@@ -21,110 +21,71 @@ const steps = [
 <section class="section" id="how-it-works">
   <div class="container">
     <p class="section-label">How It Works</p>
-    <h2 class="section-title">How to read a BettorIndex card</h2>
-    <p class="section-subtitle">A quick three-step workflow for evaluating any prop before you decide to play, shop, or pass.</p>
+    <h2 class="section-title">30 seconds per card</h2>
+    <p class="section-subtitle">Open a prop. Read three things. Decide.</p>
 
-    <div class="flow">
-      {steps.map((step, index) => (
-        <article class="flow__step">
-          <div class="flow__marker">
-            <span>{step.number}</span>
-            {index < steps.length - 1 && <div class="flow__line" aria-hidden="true"></div>}
-          </div>
-          <div class="flow__body card">
-            <h3 class="flow__title">{step.title}</h3>
-            <p class="flow__text">{step.text}</p>
-          </div>
-        </article>
+    <div class="steps">
+      {steps.map((step) => (
+        <div class="step">
+          <div class="step__num">{step.num}</div>
+          <h3 class="step__title">{step.title}</h3>
+          <p class="step__text">{step.text}</p>
+        </div>
       ))}
     </div>
   </div>
 </section>
 
 <style>
-  .flow {
+  .steps {
     display: grid;
-    gap: 22px;
+    gap: 20px;
   }
 
-  .flow__step {
-    display: grid;
-    grid-template-columns: 72px 1fr;
-    gap: 18px;
-    align-items: start;
+  .step {
+    padding: 28px 24px;
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    border: 1px solid var(--border);
+    text-align: center;
   }
 
-  .flow__marker {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100%;
-  }
-
-  .flow__marker span {
+  .step__num {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 18px;
-    background: linear-gradient(180deg, rgba(79, 195, 247, 0.18), rgba(79, 195, 247, 0.06));
-    border: 1px solid rgba(79, 195, 247, 0.24);
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(34, 211, 238, 0.2);
     color: var(--accent-bright);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    box-shadow: var(--shadow-glow);
-  }
-
-  .flow__line {
-    flex: 1;
-    width: 2px;
-    margin-top: 12px;
-    background: linear-gradient(180deg, rgba(79, 195, 247, 0.45), rgba(79, 195, 247, 0.04));
-    border-radius: 999px;
-    min-height: 48px;
-  }
-
-  .flow__body {
-    min-height: 100%;
-  }
-
-  .flow__title {
-    margin: 0 0 8px;
     font-family: var(--font-display);
     font-size: 24px;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .step__title {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     color: var(--text);
   }
 
-  .flow__text {
+  .step__text {
     margin: 0;
     color: var(--muted);
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
-  @media (min-width: 900px) {
-    .flow {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .flow__step {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .flow__marker {
-      flex-direction: row;
-      justify-content: flex-start;
-      min-height: auto;
-    }
-
-    .flow__line {
-      display: none;
+  @media (min-width: 700px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
