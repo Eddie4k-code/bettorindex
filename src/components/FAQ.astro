@@ -1,64 +1,39 @@
 ---
 const faqItems = [
   {
-    question: 'Is BettorIndex a line-shopping app?',
+    question: 'Is this a line-shopping app?',
     answer:
-      'Not exactly. BettorIndex does not compare every book and line to find the single best deal across the market. Instead, it analyzes recent player trends, checks whether books agree on the number, picks the most favorable line and best price for your leaned side, and tells you whether the spot looks playable now or whether you should shop for a better line or price on your own.',
-  },
-  {
-    question: 'What does Same Line Across Books mean?',
-    answer:
-      'Most books we track are offering the same line, so the main difference is the price you can get rather than the number itself.',
-  },
-  {
-    question: 'What does Books Disagree mean?',
-    answer:
-      'Books are posting different numbers or prices for the same market. In those spots, getting the better number usually matters before worrying about a small price difference.',
+      'No. You don\'t scroll through every book on every prop. Each card shows one line and one price for the leaned side — the bet to evaluate. We check DraftKings, FanDuel, and BetMGM behind the scenes to pick that number.',
   },
   {
     question: 'What is a lean?',
     answer:
-      'A lean shows which side recent trends support more strongly right now. It is a decision aid, not a guarantee or a locked-in prediction.',
+      'A lean is which side recent trends favor — Over or Under. It\'s a read, not a lock.',
   },
   {
-    question: 'What does No Clear Lean mean?',
+    question: 'What does "Same Line Across Books" mean?',
     answer:
-      'The recent trend signals are too mixed or too weak to confidently favor one side. That usually means the market is better treated as a wait-or-pass spot.',
+      'The books we track are posting the same number. Focus on getting the best price.',
   },
   {
-    question: 'What is the difference between Shop the Line and Shop the Price?',
+    question: 'What does "Books Disagree" mean?',
     answer:
-      'Shop the line means books are offering different market numbers, so try to grab the better number first. Shop the price means the market number is mostly the same across books, so compare the odds instead.',
+      'Books are posting different numbers. Getting the better line matters more than a small price difference.',
   },
   {
-    question: 'Why can a side lean one way but still not be playable now?',
+    question: 'What\'s the difference between shop the line and shop the price?',
     answer:
-      'Recent trends can favor one side while the current odds still make the bet unattractive. A lean tells you the direction of support, not whether the current price is worth taking.',
+      'Shop the line = books have different numbers, go find the better one. Shop the price = same number everywhere, go find better odds.',
   },
   {
-    question: 'Which books does BettorIndex support?',
+    question: 'Why lean one way but still say pass?',
     answer:
-      'BettorIndex tracks BetMGM, DraftKings, and FanDuel. Cards show the best line and price surfaced from those feeds, plus agreement or disagreement signals when available. Not every market will always have all three books represented, and BettorIndex does not show a full side-by-side odds board for every bet.',
+      'A lean tells you the trend direction. The price might still not be good enough to bet.',
   },
   {
-    question: 'Does every sport show the same card sections?',
+    question: 'Which sports are supported?',
     answer:
-      'No. NBA, MLB, and NFL all include lean, market read, and trend hit rates, but MLB and NFL also include home/away clear rates and relevant injuries when available. Filter options also differ by sport.',
-  },
-  {
-    question: 'What are Home / Away Clears?',
-    answer:
-      'Home / Away Clears show how often a player has cleared the current line in recent home games versus recent away games. The highlighted side matches this game\'s venue. This section is available on MLB and NFL cards.',
-  },
-  {
-    question: 'What are Relevant Injuries?',
-    answer:
-      'Relevant Injuries are injury notes tied to the player or matchup context for that prop. They are meant to add context, not replace your own injury checks before placing a bet. This section is available on MLB and NFL cards when data is attached.',
-  },
-  {
-    question: 'How does BettorIndex do the math?',
-    answer:
-      'BettorIndex weighs recent hit rates (newer games count more), compares that trend support to the implied probability of the best available odds, and checks whether books agree on the line. The result is a lean, a strength rating, and an action — play now, shop the line, shop the price, or pass. It is a simple decision model, not a prediction engine.',
+      'NBA, MLB, and NFL player props. MLB and NFL cards also show home/away splits and relevant injuries when available.',
   },
 ];
 ---
@@ -66,86 +41,71 @@ const faqItems = [
 <section class="section" id="faq">
   <div class="container">
     <p class="section-label">FAQ</p>
-    <h2 class="section-title">Common questions</h2>
-    <p class="section-subtitle">Terminology and concepts you'll see on prop cards and across the app.</p>
+    <h2 class="section-title">Quick answers</h2>
 
-    <div class="faq-shell card">
-      <div class="faq-list">
-        {faqItems.map((item) => (
-          <details class="faq-item">
-            <summary class="faq-item__question">{item.question}</summary>
-            <p class="faq-item__answer">{item.answer}</p>
-          </details>
-        ))}
-      </div>
+    <div class="faq-list">
+      {faqItems.map((item) => (
+        <details class="faq-item">
+          <summary class="faq-item__q">{item.question}</summary>
+          <p class="faq-item__a">{item.answer}</p>
+        </details>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  .faq-shell {
-    padding: 18px;
-  }
-
   .faq-list {
     display: grid;
     gap: 10px;
+    max-width: 720px;
   }
 
   .faq-item {
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    background: var(--card);
     border: 1px solid var(--border);
     overflow: hidden;
-    transition: border-color 0.2s ease, background 0.2s ease;
   }
 
   .faq-item[open] {
-    background: rgba(79, 195, 247, 0.04);
-    border-color: rgba(79, 195, 247, 0.18);
+    border-color: rgba(34, 211, 238, 0.2);
   }
 
-  .faq-item__question {
+  .faq-item__q {
     padding: 18px 20px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text);
     cursor: pointer;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
 
-  .faq-item__question::-webkit-details-marker {
+  .faq-item__q::-webkit-details-marker {
     display: none;
   }
 
-  .faq-item__question::after {
+  .faq-item__q::after {
     content: '+';
     color: var(--accent);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     flex-shrink: 0;
-    transition: transform 0.2s ease;
   }
 
-  .faq-item[open] .faq-item__question::after {
+  .faq-item[open] .faq-item__q::after {
     content: '−';
   }
 
-  .faq-item__answer {
+  .faq-item__a {
     margin: 0;
     padding: 0 20px 18px;
     color: var(--muted);
     font-size: 15px;
-    line-height: 1.7;
-  }
-
-  @media (min-width: 900px) {
-    .faq-shell {
-      padding: 24px;
-    }
+    line-height: 1.6;
   }
 </style>

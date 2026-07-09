@@ -1,96 +1,42 @@
 ---
-const books = [
-  {
-    name: 'BetMGM',
-    note: 'Tracked feed',
-  },
-  {
-    name: 'DraftKings',
-    note: 'Tracked feed',
-  },
-  {
-    name: 'FanDuel',
-    note: 'Tracked feed',
-  },
-];
+const books = ['BetMGM', 'DraftKings', 'FanDuel'];
 ---
 
 <section class="section section--surface">
-  <div class="container">
-    <p class="section-label">Supported Books</p>
-    <h2 class="section-title">Tracked sportsbook feeds</h2>
+  <div class="container books">
+    <p class="section-label">Books We Track</p>
+    <h2 class="section-title">DraftKings · FanDuel · BetMGM</h2>
     <p class="section-subtitle">
-      BettorIndex pulls from BetMGM, DraftKings, and FanDuel, then surfaces the best line and price available from those feeds. It does not show every book on every market every time.
+      We pull from these three books in the background to surface the best line and price on each card.
+      You don't browse every book — you get one number to act on.
     </p>
 
-    <div class="books">
+    <div class="books__row">
       {books.map((book) => (
-        <div class="book-card">
-          <div class="book-card__mark" aria-hidden="true"></div>
-          <h3 class="book-card__name">{book.name}</h3>
-          <p class="book-card__note">{book.note}</p>
-        </div>
+        <div class="books__pill">{book}</div>
       ))}
     </div>
-
-    <p class="books__footnote">
-      When books disagree, BettorIndex shows the range. When they agree, the card pushes you toward price shopping instead of number shopping.
-    </p>
   </div>
 </section>
 
 <style>
-  .books {
-    display: grid;
-    gap: 16px;
-    margin-bottom: 20px;
+  .books__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
-  .book-card {
-    position: relative;
-    padding: 24px 22px;
-    border-radius: var(--radius-md);
-    background: linear-gradient(180deg, rgba(21, 29, 43, 0.95), rgba(17, 23, 34, 0.98));
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-card);
-  }
-
-  .book-card__mark {
-    width: 42px;
-    height: 4px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--accent), transparent);
-    margin-bottom: 18px;
-  }
-
-  .book-card__name {
-    margin: 0 0 6px;
+  .books__pill {
+    padding: 14px 28px;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid var(--border-strong);
     font-family: var(--font-display);
-    font-size: 24px;
-    letter-spacing: -0.02em;
-    color: var(--text);
-  }
-
-  .book-card__note {
-    margin: 0;
-    color: var(--muted-soft);
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-  }
-
-  .books__footnote {
-    margin: 0;
-    max-width: 720px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  @media (min-width: 700px) {
-    .books {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    color: var(--text);
+    box-shadow: var(--shadow-card);
   }
 </style>
