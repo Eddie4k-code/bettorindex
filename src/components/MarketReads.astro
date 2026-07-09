@@ -1,0 +1,89 @@
+---
+const signals = [
+  {
+    label: 'Opportunity',
+    color: 'green',
+    meaning: 'The trend and price both look good. The card thinks this is playable now.',
+  },
+  {
+    label: 'Worth Watching',
+    color: 'cyan',
+    meaning: 'There\'s a lean, but something\'s off — books disagree on the line, the price isn\'t good enough, or the juice is heavy. Keep an eye on it, don\'t rush.',
+  },
+  {
+    label: 'Potential Pass',
+    color: 'muted',
+    meaning: 'No strong lean, or the price doesn\'t support a bet. Probably not worth it right now.',
+  },
+];
+---
+
+<section class="section" id="market-reads">
+  <div class="container">
+    <p class="section-label">Market Read</p>
+    <h2 class="section-title">Three signals you'll see</h2>
+    <p class="section-subtitle">
+      Every card ends with one of these. It's the app's bottom-line read on the prop.
+    </p>
+
+    <div class="signals">
+      {signals.map((signal) => (
+        <article class={`card signal signal--${signal.color}`}>
+          <h3 class="signal__label">{signal.label}</h3>
+          <p class="signal__meaning">{signal.meaning}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .signals {
+    display: grid;
+    gap: 14px;
+  }
+
+  .signal {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .signal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .signal--green::before { background: var(--green); }
+  .signal--cyan::before { background: var(--accent); }
+  .signal--muted::before { background: var(--muted-soft); }
+
+  .signal__label {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+
+  .signal--green .signal__label { color: var(--green); }
+  .signal--cyan .signal__label { color: var(--accent-bright); }
+
+  .signal__meaning {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .signals {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

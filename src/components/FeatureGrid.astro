@@ -1,66 +1,48 @@
 ---
-const features = [
+const cardSections = [
   {
-    num: '01',
-    title: 'The Lean',
-    description: 'Over or Under — based on how often the player has hit recently.',
-    color: 'cyan',
+    title: 'Lean & Book Badge',
+    description: 'Strong Lean Over/Under, plus whether tracked books agree on the line or disagree.',
   },
   {
-    num: '02',
-    title: 'Line & Odds',
-    description: 'One line and one price on the card for your leaned side. That\'s the bet to evaluate.',
-    color: 'green',
+    title: 'Market Read',
+    description: 'Opportunity, Worth Watching, or Potential Pass — with a short explanation of why.',
   },
   {
-    num: '03',
-    title: 'Play, Shop, or Pass',
-    description: 'A simple read on whether the spot looks good now, needs a better number, or isn\'t worth it.',
-    color: 'gold',
+    title: 'Line & Best Odds',
+    description: 'One line and one price for your leaned side, with the book it came from.',
   },
   {
-    num: '04',
     title: 'Hit Rates',
-    description: 'Recent over/under percentages so you can see the trend behind the lean.',
-    color: 'red',
+    description: 'Recent over/under percentages for the leaned side. Tap to expand the other side too.',
   },
-];
-
-const extras = [
-  { sport: 'NBA', text: 'Points, assists, rebounds' },
-  { sport: 'MLB', text: 'Hits, total bases, home/away splits, injuries' },
-  { sport: 'NFL', text: 'Passing, rushing, receiving, home/away splits, injuries' },
+  {
+    title: 'Home / Away Clears',
+    description: 'How often the player has cleared this line at home vs. away. MLB & NFL.',
+  },
+  {
+    title: 'Relevant Injuries',
+    description: 'Injury notes tied to that player or prop context. MLB & NFL.',
+  },
 ];
 ---
 
 <section class="section section--surface" id="features">
   <div class="container">
     <p class="section-label">What's On a Card</p>
-    <h2 class="section-title">Four things. That's it.</h2>
+    <h2 class="section-title">This is the actual card</h2>
     <p class="section-subtitle">
-      Every prop card shows the same core info. No odds board. No scrolling through every book.
+      Every prop shows a lean, a market read, one line, one price, hit rates, and extra context where available.
     </p>
 
     <div class="grid">
-      {features.map((f) => (
-        <article class={`card feature feature--${f.color}`}>
-          <span class="feature__num">{f.num}</span>
-          <h3 class="feature__title">{f.title}</h3>
-          <p class="feature__desc">{f.description}</p>
+      {cardSections.map((section, i) => (
+        <article class="card section-card">
+          <span class="section-card__num">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="section-card__title">{section.title}</h3>
+          <p class="section-card__desc">{section.description}</p>
         </article>
       ))}
-    </div>
-
-    <div class="extras">
-      <p class="extras__label">By sport</p>
-      <div class="extras__list">
-        {extras.map((e) => (
-          <div class="extras__item">
-            <span class="extras__sport">{e.sport}</span>
-            <span class="extras__text">{e.text}</span>
-          </div>
-        ))}
-      </div>
     </div>
   </div>
 </section>
@@ -68,97 +50,33 @@ const extras = [
 <style>
   .grid {
     display: grid;
-    gap: 16px;
-    margin-bottom: 48px;
+    gap: 14px;
   }
 
-  .feature {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .feature::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-  }
-
-  .feature--cyan::before { background: var(--accent); }
-  .feature--green::before { background: var(--green); }
-  .feature--gold::before { background: var(--gold); }
-  .feature--red::before { background: var(--red); }
-
-  .feature__num {
+  .section-card__num {
     display: block;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     font-family: var(--font-display);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 1;
-    color: rgba(148, 163, 184, 0.25);
+    color: rgba(148, 163, 184, 0.2);
   }
 
-  .feature__title {
-    margin: 0 0 8px;
+  .section-card__title {
+    margin: 0 0 6px;
     font-family: var(--font-display);
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--text);
   }
 
-  .feature__desc {
+  .section-card__desc {
     margin: 0;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.55;
-  }
-
-  .extras {
-    padding: 24px;
-    border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
-  }
-
-  .extras__label {
-    margin: 0 0 16px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted-soft);
-  }
-
-  .extras__list {
-    display: grid;
-    gap: 12px;
-  }
-
-  .extras__item {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .extras__sport {
-    min-width: 42px;
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent-bright);
-  }
-
-  .extras__text {
-    color: var(--muted);
-    font-size: 15px;
   }
 
   @media (min-width: 600px) {
@@ -169,7 +87,7 @@ const extras = [
 
   @media (min-width: 900px) {
     .grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

@@ -6,39 +6,60 @@
   <div class="preview__card">
     <div class="preview__top">
       <div>
-        <p class="preview__player">Josh Allen</p>
-        <p class="preview__matchup">BUF @ MIA · HOME TONIGHT</p>
+        <p class="preview__player">Ildemaro Vargas</p>
+        <p class="preview__matchup">ARI @ SD · AWAY TONIGHT</p>
       </div>
-      <span class="preview__market">PASS YDS</span>
+      <span class="preview__market">Batter Hits</span>
     </div>
 
     <div class="preview__badges">
-      <span class="preview__lean">Lean Over</span>
-      <span class="preview__state">Same Line Across Books</span>
+      <span class="preview__lean preview__lean--under">Strong Lean Under</span>
+      <span class="preview__state preview__state--agree">Same Line Across Books</span>
     </div>
 
     <div class="preview__read">
-      <span class="preview__read-label">Opportunity</span>
-      <p>Trend supports Over and the price looks playable.</p>
+      <div class="preview__read-top">
+        <span>Market Read</span>
+        <strong class="preview__read-label">Opportunity</strong>
+      </div>
+      <p>Backend sees a strong under trend with positive edge at the current best price.</p>
     </div>
 
     <div class="preview__bet">
       <div class="preview__bet-cell">
         <span>Line</span>
-        <strong class="over">OVER 245.5</strong>
-        <small>DraftKings</small>
+        <strong class="under">UNDER 0.5</strong>
+        <small>draftkings</small>
       </div>
       <div class="preview__bet-cell">
-        <span>Odds</span>
-        <strong class="over">-108</strong>
-        <small>DraftKings</small>
+        <span>Best Odds</span>
+        <strong class="under">121</strong>
+        <small>draftkings</small>
       </div>
     </div>
 
-    <div class="preview__rates">
-      <div><span>3G</span><strong>67%</strong></div>
-      <div><span>6G</span><strong>60%</strong></div>
-      <div><span>10G</span><strong>55%</strong></div>
+    <div class="preview__rates-block">
+      <p class="preview__rates-title">UNDER hit rate</p>
+      <div class="preview__rates">
+        <div><span>10D</span><strong>60%</strong></div>
+        <div><span>30D</span><strong>63%</strong></div>
+        <div><span>60D</span><strong>47%</strong></div>
+      </div>
+    </div>
+
+    <div class="preview__rows">
+      <div class="preview__row">
+        <span>Hit Rates for OVER</span>
+        <span class="preview__row-meta">10D 40% · 30D 37% · 60D 53%</span>
+      </div>
+      <div class="preview__row">
+        <span>Home / Away Clears</span>
+        <span class="preview__row-meta">Tonight O 1/5 · U 4/5</span>
+      </div>
+      <div class="preview__row">
+        <span>Injuries</span>
+        <span class="preview__row-meta">1 relevant injury</span>
+      </div>
     </div>
   </div>
 </div>
@@ -46,7 +67,7 @@
 <style>
   .preview {
     position: relative;
-    width: min(100%, 380px);
+    width: min(100%, 360px);
     margin: 0 auto;
     animation: float 5s ease-in-out infinite;
   }
@@ -59,7 +80,7 @@
   .preview__glow {
     position: absolute;
     inset: 10% 0 -10%;
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.25), transparent 65%);
+    background: radial-gradient(circle, rgba(244, 63, 94, 0.2), transparent 65%);
     filter: blur(24px);
     z-index: 0;
   }
@@ -67,36 +88,31 @@
   .preview__card {
     position: relative;
     z-index: 1;
-    padding: 20px;
-    border-radius: 18px;
+    padding: 18px;
+    border-radius: 20px;
     background: linear-gradient(165deg, #141c28 0%, #0d1219 100%);
-    border: 1px solid rgba(34, 211, 238, 0.2);
-    box-shadow:
-      0 24px 48px rgba(0, 0, 0, 0.5),
-      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
   }
 
   .preview__top {
     display: flex;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .preview__player {
     margin: 0 0 4px;
-    font-family: var(--font-display);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
     color: #f8fafc;
   }
 
   .preview__matchup {
     margin: 0;
     color: #94a3b8;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -104,13 +120,13 @@
 
   .preview__market {
     padding: 5px 10px;
-    border-radius: 6px;
-    background: rgba(34, 211, 238, 0.1);
-    border: 1px solid rgba(34, 211, 238, 0.2);
-    color: #67e8f9;
+    border-radius: 999px;
+    background: #1b2331;
+    color: #9ed8ff;
     font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     height: fit-content;
   }
 
@@ -118,55 +134,60 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
-  .preview__lean {
-    padding: 5px 10px;
-    border-radius: 6px;
-    background: rgba(74, 222, 128, 0.12);
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    color: #4ade80;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
+  .preview__lean,
   .preview__state {
-    padding: 5px 10px;
-    border-radius: 6px;
-    background: rgba(148, 163, 184, 0.08);
-    border: 1px solid rgba(148, 163, 184, 0.15);
-    color: #cbd5e1;
-    font-size: 11px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
 
+  .preview__lean--under {
+    background: rgba(251, 113, 133, 0.15);
+    border: 1px solid rgba(251, 113, 133, 0.3);
+    color: #fda4af;
+  }
+
+  .preview__state--agree {
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    color: #86efac;
+  }
+
   .preview__read {
     padding: 12px 14px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--border);
-    margin-bottom: 14px;
+    border-radius: 12px;
+    background: #17202d;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    margin-bottom: 12px;
+  }
+
+  .preview__read-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #93a4bb;
   }
 
   .preview__read-label {
-    display: block;
-    margin-bottom: 4px;
-    color: #67e8f9;
-    font-size: 11px;
+    color: #9ed8ff;
     font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
 
   .preview__read p {
     margin: 0;
     color: #cbd5e1;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.45;
   }
 
@@ -174,42 +195,53 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .preview__bet-cell {
     padding: 12px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #101722;
+    border: 1px solid rgba(148, 163, 184, 0.08);
   }
 
   .preview__bet-cell span {
     display: block;
-    color: #64748b;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    color: #93a4bb;
+    font-size: 11px;
     margin-bottom: 4px;
   }
 
   .preview__bet-cell strong {
     display: block;
-    font-family: var(--font-display);
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    letter-spacing: 0.02em;
     margin-bottom: 2px;
   }
 
-  .preview__bet-cell strong.over {
-    color: #4ade80;
+  .preview__bet-cell strong.under {
+    color: #fda4af;
   }
 
   .preview__bet-cell small {
-    color: #64748b;
+    color: #7f8da3;
     font-size: 11px;
+    text-transform: lowercase;
+  }
+
+  .preview__rates-block {
+    padding: 12px;
+    border-radius: 12px;
+    background: #101722;
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    margin-bottom: 10px;
+  }
+
+  .preview__rates-title {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #93a4bb;
   }
 
   .preview__rates {
@@ -219,26 +251,46 @@
   }
 
   .preview__rates > div {
-    padding: 10px 8px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 10px;
+    background: #0d1219;
     text-align: center;
   }
 
   .preview__rates span {
     display: block;
-    color: #64748b;
+    color: #93a4bb;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
     margin-bottom: 2px;
   }
 
   .preview__rates strong {
-    color: #4ade80;
-    font-family: var(--font-display);
-    font-size: 18px;
+    color: #fda4af;
+    font-size: 15px;
     font-weight: 700;
+  }
+
+  .preview__rows {
+    display: grid;
+    gap: 8px;
+  }
+
+  .preview__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #101722;
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+
+  .preview__row-meta {
+    color: #93a4bb;
+    font-size: 11px;
+    text-align: right;
   }
 </style>
