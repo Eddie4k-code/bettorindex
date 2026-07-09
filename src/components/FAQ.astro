@@ -1,6 +1,11 @@
 ---
 const faqItems = [
   {
+    question: 'Is BettorIndex a line-shopping app?',
+    answer:
+      'Not exactly. BettorIndex does not compare every book and line to find the single best deal across the market. Instead, it analyzes recent player trends, checks whether books agree on the number, picks the most favorable line and best price for your leaned side, and tells you whether the spot looks playable now or whether you should shop for a better line or price on your own.',
+  },
+  {
     question: 'What does Same Line Across Books mean?',
     answer:
       'Most books we track are offering the same line, so the main difference is the price you can get rather than the number itself.',
@@ -38,7 +43,7 @@ const faqItems = [
   {
     question: 'How does BettorIndex do the math?',
     answer:
-      'BettorIndex uses a simple decision model, not a guarantee. It weighs recent trend data, gives more weight to newer results, compares that support to the best available odds, and checks whether books agree on the line. The goal is to flag whether a prop looks worth considering, worth shopping, or better left alone.',
+      'BettorIndex weighs recent hit rates (newer games count more), compares that trend support to the implied probability of the best available odds, and checks whether books agree on the line. The result is a lean, a strength rating, and an action — play now, shop the line, shop the price, or pass. It is a simple decision model, not a prediction engine.',
   },
 ];
 ---
