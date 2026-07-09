@@ -38,7 +38,22 @@ const faqItems = [
   {
     question: 'Which books does BettorIndex support?',
     answer:
-      'BettorIndex currently supports BetMGM, DraftKings, and FanDuel. The books shown on each card come from those supported feeds, and not every market will always have all three available at the same time.',
+      'BettorIndex tracks BetMGM, DraftKings, and FanDuel. Cards show the best line and price surfaced from those feeds, plus agreement or disagreement signals when available. Not every market will always have all three books represented, and BettorIndex does not show a full side-by-side odds board for every bet.',
+  },
+  {
+    question: 'Does every sport show the same card sections?',
+    answer:
+      'No. NBA, MLB, and NFL all include lean, market read, and trend hit rates, but MLB and NFL also include home/away clear rates and relevant injuries when available. Filter options also differ by sport.',
+  },
+  {
+    question: 'What are Home / Away Clears?',
+    answer:
+      'Home / Away Clears show how often a player has cleared the current line in recent home games versus recent away games. The highlighted side matches this game\'s venue. This section is available on MLB and NFL cards.',
+  },
+  {
+    question: 'What are Relevant Injuries?',
+    answer:
+      'Relevant Injuries are injury notes tied to the player or matchup context for that prop. They are meant to add context, not replace your own injury checks before placing a bet. This section is available on MLB and NFL cards when data is attached.',
   },
   {
     question: 'How does BettorIndex do the math?',
@@ -48,40 +63,51 @@ const faqItems = [
 ];
 ---
 
-<section class="section section--surface" id="faq">
+<section class="section" id="faq">
   <div class="container">
     <p class="section-label">FAQ</p>
     <h2 class="section-title">Common questions</h2>
-    <p class="section-subtitle">Terminology and concepts you'll see on every prop card.</p>
+    <p class="section-subtitle">Terminology and concepts you'll see on prop cards and across the app.</p>
 
-    <div class="faq-list">
-      {faqItems.map((item, i) => (
-        <details class="faq-item">
-          <summary class="faq-item__question">{item.question}</summary>
-          <p class="faq-item__answer">{item.answer}</p>
-        </details>
-      ))}
+    <div class="faq-shell card">
+      <div class="faq-list">
+        {faqItems.map((item) => (
+          <details class="faq-item">
+            <summary class="faq-item__question">{item.question}</summary>
+            <p class="faq-item__answer">{item.answer}</p>
+          </details>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .faq-shell {
+    padding: 18px;
+  }
+
   .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    gap: 10px;
   }
 
   .faq-item {
-    background: var(--card);
-    border: 1px solid var(--border);
     border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
     overflow: hidden;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .faq-item[open] {
+    background: rgba(79, 195, 247, 0.04);
+    border-color: rgba(79, 195, 247, 0.18);
   }
 
   .faq-item__question {
-    padding: 20px 24px;
-    font-weight: 600;
+    padding: 18px 20px;
+    font-weight: 700;
     font-size: 16px;
     color: var(--text);
     cursor: pointer;
@@ -99,10 +125,10 @@ const faqItems = [
   .faq-item__question::after {
     content: '+';
     color: var(--accent);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     flex-shrink: 0;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
   }
 
   .faq-item[open] .faq-item__question::after {
@@ -111,14 +137,15 @@ const faqItems = [
 
   .faq-item__answer {
     margin: 0;
-    padding: 0 24px 20px;
+    padding: 0 20px 18px;
     color: var(--muted);
     font-size: 15px;
-    line-height: 1.6;
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 900px) {
+    .faq-shell {
+      padding: 24px;
+    }
   }
 </style>

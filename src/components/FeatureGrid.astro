@@ -1,46 +1,67 @@
 ---
-const features = [
+const coreFeatures = [
   {
-    title: 'Multi-Book Market Context',
+    icon: '01',
+    title: 'Lean & Market Read',
     description:
-      'See lines and prices from BetMGM, DraftKings, and FanDuel on every card. BettorIndex picks the best line for your leaned side, then the best price at that line — and flags when books agree or disagree.',
-    tag: 'BetMGM · DraftKings · FanDuel',
+      'Every card shows a trend lean, strength label, and market read — Opportunity, Worth Watching, or Pass — plus whether to shop the line or shop the price.',
+    tag: 'All sports',
   },
   {
-    title: 'Market State Badges',
+    icon: '02',
+    title: 'Best Line & Price',
     description:
-      'See at a glance whether books agree on the line or are posting different numbers for the same market.',
-    tag: 'Same Line · Books Disagree',
+      'Each card surfaces the best available Over and Under line and price from BettorIndex\'s tracked feeds. It is not a full side-by-side odds board for every book on every bet.',
+    tag: 'Tracked feeds',
   },
   {
+    icon: '03',
+    title: 'Agreement vs. Disagreement',
+    description:
+      'Cards flag when tracked books are posting the same line or different numbers, so you know whether to focus on getting the better number or the better price.',
+    tag: 'Market state',
+  },
+  {
+    icon: '04',
     title: 'Trend Hit Rates',
     description:
-      'Weighted over/under hit rates across recent game windows — 10/30/60 days for NBA and MLB, last 3/6/10 games for NFL. Newer results count more.',
-    tag: 'Weighted · Per sport',
+      'Weighted recent hit rates with newer results counting more. Windows differ by sport: 10/30/60 days for NBA and MLB, last 3/6/10 games for NFL.',
+    tag: 'Per-sport windows',
+  },
+];
+
+const sportFeatures = [
+  {
+    sport: 'NBA',
+    accent: 'nba',
+    tagline: 'Core reads + browse',
+    items: [
+      'Points, assists, and rebounds',
+      'Lean, market read, and trend snapshot',
+      'Market and sort filters',
+    ],
   },
   {
-    title: 'Lean Signals & Market Read',
-    description:
-      'Every card shows a trend lean (Over/Under), a strength label, and a market read — Opportunity, Worth Watching, or Pass — plus guidance on whether to shop the line or shop the price.',
-    tag: 'NBA · MLB · NFL',
+    sport: 'MLB',
+    accent: 'mlb',
+    tagline: 'Core reads + venue & injury context',
+    items: [
+      'Hits and total bases',
+      'Home/away clear rates with venue highlighted',
+      'Relevant injuries when available',
+      '10/30/60-day hit rate filters',
+    ],
   },
   {
-    title: 'Home/Away & Venue Context',
-    description:
-      'See how often a player has cleared the line at home vs. away, with tonight\'s venue highlighted.',
-    tag: 'MLB · NFL',
-  },
-  {
-    title: 'Injury Context',
-    description:
-      'Relevant injury information on MLB prop cards, including status, return dates, and why it matters for the prop.',
-    tag: 'MLB',
-  },
-  {
-    title: 'Prop Market Browse',
-    description:
-      'Browse player props across NBA, MLB, and NFL — points, assists, passing yards, hits, total bases, and more.',
-    tag: 'NBA · MLB · NFL',
+    sport: 'NFL',
+    accent: 'nfl',
+    tagline: 'Core reads + venue & injury context',
+    items: [
+      'Passing, rushing, receiving, and more',
+      'Home/away clear rates with venue highlighted',
+      'Relevant injuries when available',
+      '3/6/10-game hit rate filters',
+    ],
   },
 ];
 ---
@@ -48,65 +69,241 @@ const features = [
 <section class="section section--surface" id="features">
   <div class="container">
     <p class="section-label">Features</p>
-    <h2 class="section-title">Everything you need to evaluate a prop</h2>
+    <h2 class="section-title">What every card includes — and what varies by sport</h2>
     <p class="section-subtitle">
-      BettorIndex helps you compare recent trends, book disagreement, and available prices — with clear decision reads on every prop card.
+      BettorIndex is not a line-shopping odds board. Every prop card uses the same decision framework, but MLB and NFL include extra context that NBA does not.
     </p>
 
-    <div class="grid">
-      {features.map((feature) => (
-        <div class="card feature">
-          <span class="feature__tag">{feature.tag}</span>
+    <div class="core-grid">
+      {coreFeatures.map((feature) => (
+        <article class="card feature">
+          <div class="feature__top">
+            <span class="feature__icon">{feature.icon}</span>
+            <span class="feature__tag">{feature.tag}</span>
+          </div>
           <h3 class="feature__title">{feature.title}</h3>
           <p class="feature__desc">{feature.description}</p>
-        </div>
+        </article>
       ))}
+    </div>
+
+    <div class="sport-block">
+      <div class="sport-block__intro">
+        <h3 class="sport-block__title">Sport-specific context</h3>
+        <p class="sport-block__subtitle">
+          Browse props across NBA, MLB, and NFL — but don't expect the same extra sections on every sport.
+        </p>
+      </div>
+
+      <div class="sport-grid">
+        {sportFeatures.map((sport) => (
+          <article class={`card sport-card sport-card--${sport.accent}`}>
+            <div class="sport-card__header">
+              <span class="sport-card__pill">{sport.sport}</span>
+              <p class="sport-card__tagline">{sport.tagline}</p>
+            </div>
+            <ul class="sport-card__list">
+              {sport.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .section--surface {
-    background: var(--surface);
+  .core-grid {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 56px;
   }
 
-  .grid {
-    display: grid;
-    gap: 20px;
+  .feature__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .feature__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: rgba(79, 195, 247, 0.1);
+    border: 1px solid rgba(79, 195, 247, 0.18);
+    color: var(--accent-bright);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
   }
 
   .feature__tag {
-    display: inline-block;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
+    color: var(--muted-soft);
   }
 
   .feature__title {
     margin: 0 0 10px;
-    font-size: 18px;
+    font-family: var(--font-display);
+    font-size: 22px;
     color: var(--text);
+    letter-spacing: -0.02em;
   }
 
   .feature__desc {
     margin: 0;
     color: var(--muted);
     font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .sport-block__intro {
+    margin-bottom: 28px;
+  }
+
+  .sport-block__title {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .sport-block__subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 720px;
+  }
+
+  .sport-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .sport-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sport-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  .sport-card--nba::before {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  }
+
+  .sport-card--mlb::before {
+    background: linear-gradient(90deg, #fb7185, #fda4af);
+  }
+
+  .sport-card--nfl::before {
+    background: linear-gradient(90deg, #34d399, #6ee7b7);
+  }
+
+  .sport-card__header {
+    margin-bottom: 18px;
+  }
+
+  .sport-card__pill {
+    display: inline-flex;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+
+  .sport-card--nba .sport-card__pill {
+    color: #fcd34d;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+  }
+
+  .sport-card--mlb .sport-card__pill {
+    color: #fda4af;
+    background: rgba(251, 113, 133, 0.12);
+    border: 1px solid rgba(251, 113, 133, 0.22);
+  }
+
+  .sport-card--nfl .sport-card__pill {
+    color: #6ee7b7;
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.22);
+  }
+
+  .sport-card__tagline {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .sport-card__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .sport-card__list li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 15px;
     line-height: 1.55;
   }
 
-  @media (min-width: 600px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .sport-card__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.55;
   }
 
-  @media (min-width: 900px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
+  .sport-card--nba .sport-card__list li::before {
+    color: #f59e0b;
+  }
+
+  .sport-card--mlb .sport-card__list li::before {
+    color: #fb7185;
+  }
+
+  .sport-card--nfl .sport-card__list li::before {
+    color: #34d399;
+  }
+
+  @media (min-width: 700px) {
+    .core-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sport-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>
