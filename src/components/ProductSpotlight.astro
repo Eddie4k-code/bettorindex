@@ -1,0 +1,104 @@
+---
+---
+
+<section class="section" id="products">
+  <div class="container">
+    <p class="section-label">What You Research</p>
+    <h2 class="section-title">Two research modes</h2>
+    <p class="section-subtitle">
+      Player props and team game lines — same research-card idea, different signals.
+    </p>
+
+    <div class="spotlight">
+      <article class="card spotlight__card">
+        <p class="spotlight__label">Prop Markets</p>
+        <h3 class="spotlight__title">Research player Over/Under props</h3>
+        <ul class="spotlight__list">
+          <li>Hit rates and trend flags for the leaned side</li>
+          <li>Best line and price from tracked books</li>
+          <li>Home/away clears and relevant player injuries</li>
+          <li>Market Read — Opportunity, Worth Watching, or Potential Pass</li>
+        </ul>
+        <a href="#prop-markets" class="spotlight__link">See prop card sections →</a>
+      </article>
+
+      <article class="card spotlight__card spotlight__card--game-lines">
+        <p class="spotlight__label">Game Lines</p>
+        <h3 class="spotlight__title">Research team moneyline, spread, and total markets</h3>
+        <ul class="spotlight__list">
+          <li>Venue and head-to-head records in plain language</li>
+          <li>Best odds per side with split-market ranges when books disagree</li>
+          <li>Opposing team or direction context on every card</li>
+          <li>Relevant injuries for both teams in the matchup</li>
+        </ul>
+        <a href="#game-lines" class="spotlight__link">See game line card sections →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .spotlight {
+    display: grid;
+    gap: 16px;
+  }
+
+  .spotlight__card {
+    padding: 28px 24px;
+    border: 1px solid var(--border-strong);
+  }
+
+  .spotlight__card--game-lines {
+    border-color: rgba(34, 211, 238, 0.2);
+    background: linear-gradient(165deg, rgba(17, 24, 34, 1) 0%, rgba(12, 18, 28, 1) 100%);
+  }
+
+  .spotlight__label {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .spotlight__title {
+    margin: 0 0 16px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .spotlight__list {
+    margin: 0 0 20px;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .spotlight__list li + li {
+    margin-top: 6px;
+  }
+
+  .spotlight__link {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-bright);
+    text-decoration: none;
+  }
+
+  .spotlight__link:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .spotlight {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

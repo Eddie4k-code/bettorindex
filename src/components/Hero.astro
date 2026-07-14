@@ -1,5 +1,6 @@
 ---
 import PropCardPreview from './PropCardPreview.astro';
+import GameLineCardPreview from './GameLineCardPreview.astro';
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -8,20 +9,20 @@ const base = import.meta.env.BASE_URL;
   <div class="hero__bg" aria-hidden="true"></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="hero__eyebrow">Player Prop Analytics</p>
+      <p class="hero__eyebrow">Sports Betting Research Tool</p>
 
       <h1 class="hero__title">
-        Is this prop
-        <span class="hero__title-accent">worth a look?</span>
+        Research the bet
+        <span class="hero__title-accent">before you place it</span>
       </h1>
 
       <p class="hero__subtitle">
-        Lean, Market Read, line, odds, hit rates, and injuries — everything on one card.
-        Not an odds board. An analytics decision card.
+        Scan player props and team game lines with trends, leans, and best available odds on one card.
+        Not an odds board. A research card.
       </p>
 
       <div class="hero__actions">
-        <a href={`${base}#features`} class="btn btn--primary">See what's on a card</a>
+        <a href={`${base}#products`} class="btn btn--primary">See what you can research</a>
       </div>
 
       <div class="hero__meta">
@@ -34,9 +35,60 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
 
-    <PropCardPreview />
+    <div class="hero__preview">
+      <div class="hero__tabs" role="tablist" aria-label="Card preview type">
+        <button
+          type="button"
+          class="hero__tab hero__tab--active"
+          role="tab"
+          aria-selected="true"
+          data-preview-tab="prop"
+        >
+          Player Prop
+        </button>
+        <button
+          type="button"
+          class="hero__tab"
+          role="tab"
+          aria-selected="false"
+          data-preview-tab="game-line"
+        >
+          Game Line
+        </button>
+      </div>
+
+      <div class="hero__preview-panel hero__preview-panel--active" data-preview-panel="prop">
+        <PropCardPreview />
+      </div>
+      <div class="hero__preview-panel" data-preview-panel="game-line" hidden>
+        <GameLineCardPreview />
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  const tabs = document.querySelectorAll('[data-preview-tab]');
+  const panels = document.querySelectorAll('[data-preview-panel]');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-preview-tab');
+
+      tabs.forEach((item) => {
+        const isActive = item.getAttribute('data-preview-tab') === target;
+        item.classList.toggle('hero__tab--active', isActive);
+        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.getAttribute('data-preview-panel') === target;
+        panel.classList.toggle('hero__preview-panel--active', isActive);
+        panel.hidden = !isActive;
+      });
+    });
+  });
+</script>
 
 <style>
   .hero {
@@ -73,12 +125,12 @@ const base = import.meta.env.BASE_URL;
   .hero__title {
     margin: 0 0 20px;
     font-family: var(--font-display);
-    font-size: clamp(44px, 8vw, 72px);
+    font-size: clamp(40px, 7vw, 68px);
     font-weight: 700;
     line-height: 0.95;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    max-width: 10ch;
+    max-width: 12ch;
   }
 
   .hero__title-accent {
@@ -146,6 +198,51 @@ const base = import.meta.env.BASE_URL;
     border: 1px solid rgba(34, 197, 94, 0.25);
   }
 
+  .hero__preview {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero__tabs {
+    display: flex;
+    gap: 8px;
+    align-self: center;
+    padding: 4px;
+    border-radius: 12px;
+    background: rgba(17, 24, 34, 0.9);
+    border: 1px solid var(--border);
+  }
+
+  .hero__tab {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .hero__tab--active {
+    background: var(--accent-dim);
+    color: var(--accent-bright);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+  }
+
+  .hero__preview-panel {
+    display: none;
+  }
+
+  .hero__preview-panel--active {
+    display: block;
+  }
+
   @media (min-width: 900px) {
     .hero {
       padding: 88px 0 96px;
@@ -158,6 +255,10 @@ const base = import.meta.env.BASE_URL;
 
     .hero__title {
       max-width: none;
+    }
+
+    .hero__tabs {
+      align-self: flex-start;
     }
   }
 </style>

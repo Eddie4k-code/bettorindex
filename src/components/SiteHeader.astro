@@ -1,7 +1,9 @@
 ---
 const base = import.meta.env.BASE_URL;
 const navLinks = [
-  { href: `${base}#features`, label: 'Features' },
+  { href: `${base}#products`, label: 'Research' },
+  { href: `${base}#prop-markets`, label: 'Player Props' },
+  { href: `${base}#game-lines`, label: 'Game Lines' },
   { href: `${base}#market-reads`, label: 'Market Read' },
   { href: `${base}#how-it-works`, label: 'How It Works' },
   { href: `${base}#faq`, label: 'FAQ' },
@@ -66,11 +68,13 @@ const navLinks = [
 
   .header__nav {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: flex-end;
   }
 
   .header__link {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--muted);
     text-decoration: none;
@@ -81,5 +85,11 @@ const navLinks = [
   .header__link:hover {
     color: var(--accent-bright);
     text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    .header__nav {
+      display: none;
+    }
   }
 </style>

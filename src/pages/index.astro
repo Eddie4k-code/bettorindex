@@ -3,8 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import Hero from '../components/Hero.astro';
+import ProductSpotlight from '../components/ProductSpotlight.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
+import GameLineFeatureGrid from '../components/GameLineFeatureGrid.astro';
 import MarketReads from '../components/MarketReads.astro';
 import SupportedBooks from '../components/SupportedBooks.astro';
 import FAQ from '../components/FAQ.astro';
@@ -12,10 +14,12 @@ import Disclaimer from '../components/Disclaimer.astro';
 import DownloadCTA from '../components/DownloadCTA.astro';
 ---
 
-<BaseLayout title="BettorIndex — Player Prop Analytics">
+<BaseLayout title="BettorIndex — Sports Betting Research Tool">
   <SiteHeader slot="header" />
   <Hero />
+  <ProductSpotlight />
   <FeatureGrid />
+  <GameLineFeatureGrid />
   <MarketReads />
   <HowItWorks />
   <SupportedBooks />

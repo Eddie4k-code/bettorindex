@@ -1,38 +1,42 @@
 ---
 const cardSections = [
   {
-    title: 'Lean & Best Odds',
-    description: 'Strong Lean Over/Under plus the best line and price we found across tracked books.',
+    title: 'Team or Direction Lean',
+    description: 'Moneyline and spread: team name. Totals: Over or Under — or No Clear Lean.',
+  },
+  {
+    title: 'Records That Drive Lean',
+    description: 'Venue and head-to-head windows in plain language. Last-N overall is context only.',
+  },
+  {
+    title: 'Head-to-Head Context',
+    description: 'Matchup-specific history against tonight\'s opponent when sample is 3+ games.',
+  },
+  {
+    title: 'Best Line & Odds',
+    description: 'Moneyline price, spread line, or total line plus juice from the best available book.',
+  },
+  {
+    title: 'Opposing Side',
+    description: 'Expand the other team (h2h/spread) or the other direction (totals) for full context.',
   },
   {
     title: 'Split Market',
-    description: 'When books post different lines on a prop, the card shows the min and max line range.',
-  },
-  {
-    title: 'Market Read',
-    description: 'Opportunity, Worth Watching, or Potential Pass — with a short explanation of why.',
-  },
-  {
-    title: 'Hit Rates',
-    description: 'Recent over/under percentages for the leaned side. Tap to expand the other side too.',
-  },
-  {
-    title: 'Home / Away Clears',
-    description: 'How often the player has cleared this line at home vs. away, with tonight\'s venue highlighted.',
+    description: 'H2H: price range per team. Spreads/totals: line and price ranges when books disagree.',
   },
   {
     title: 'Relevant Injuries',
-    description: 'Injury notes tied to that player or prop — when we have data for the matchup.',
+    description: 'Injury notes for both teams in the matchup — when we have data, not a full league report.',
   },
 ];
 ---
 
-<section class="section section--surface" id="prop-markets">
+<section class="section section--surface" id="game-lines">
   <div class="container">
-    <p class="section-label">Prop Market Research</p>
-    <h2 class="section-title">What's on a player prop card</h2>
+    <p class="section-label">Game Line Research</p>
+    <h2 class="section-title">What's on a game line card</h2>
     <p class="section-subtitle">
-      Every prop research card — NBA, MLB, or NFL — shows the same sections.
+      Research moneyline, spread, and total matchups with the same card structure across NBA, MLB, and NFL.
     </p>
 
     <div class="grid">
