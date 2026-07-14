@@ -1,19 +1,37 @@
 ---
-const steps = [
+const propSteps = [
   {
     num: '1',
-    title: 'Check the lean',
-    text: 'Strong Lean Over or Under — which side has the trend?',
+    title: 'Check Over/Under lean',
+    text: 'See which side weighted hit rates favor — or whether the market is still too mixed.',
   },
   {
     num: '2',
-    title: 'Check line & odds',
-    text: 'One number, one price. That\'s the line and price highlighted on the card.',
+    title: 'Check best line & price',
+    text: 'One highlighted line and price for the leaned side from tracked books.',
   },
   {
     num: '3',
-    title: 'Check the Market Read',
-    text: 'Opportunity, Worth Watching, or Potential Pass.',
+    title: 'Expand context',
+    text: 'Open hit rates, home/away clears, and injuries — then check Market Read for readiness.',
+  },
+];
+
+const gameLineSteps = [
+  {
+    num: '1',
+    title: 'Check team or direction lean',
+    text: 'Team name for moneyline/spread. Over or Under for totals. Or No Clear Lean.',
+  },
+  {
+    num: '2',
+    title: 'Read venue & H2H records',
+    text: 'Plain records like "Won 6 of last 10 away games" or "Covered 6 of last 10" — what actually drives the lean.',
+  },
+  {
+    num: '3',
+    title: 'Compare sides & injuries',
+    text: 'Best line/odds, expand the opposing team or direction, and check relevant injuries for both teams.',
   },
 ];
 ---
@@ -21,55 +39,87 @@ const steps = [
 <section class="section section--surface" id="how-it-works">
   <div class="container">
     <p class="section-label">How It Works</p>
-    <h2 class="section-title">30 seconds per card</h2>
-    <p class="section-subtitle">Open a prop. Read three things. Decide for yourself.</p>
+    <h2 class="section-title">30 seconds of research per card</h2>
+    <p class="section-subtitle">Two research modes. Different signals — same scan-and-decide workflow.</p>
 
-    <div class="steps">
-      {steps.map((step) => (
-        <div class="step">
-          <div class="step__num">{step.num}</div>
-          <h3 class="step__title">{step.title}</h3>
-          <p class="step__text">{step.text}</p>
+    <div class="modes">
+      <div class="mode">
+        <h3 class="mode__title">Prop Markets</h3>
+        <div class="steps">
+          {propSteps.map((step) => (
+            <div class="step">
+              <div class="step__num">{step.num}</div>
+              <h4 class="step__title">{step.title}</h4>
+              <p class="step__text">{step.text}</p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      <div class="mode">
+        <h3 class="mode__title">Game Lines</h3>
+        <div class="steps">
+          {gameLineSteps.map((step) => (
+            <div class="step">
+              <div class="step__num">{step.num}</div>
+              <h4 class="step__title">{step.title}</h4>
+              <p class="step__text">{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .modes {
+    display: grid;
+    gap: 24px;
+  }
+
+  .mode__title {
+    margin: 0 0 16px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-bright);
+  }
+
   .steps {
     display: grid;
-    gap: 20px;
+    gap: 14px;
   }
 
   .step {
-    padding: 28px 24px;
+    padding: 22px 20px;
     border-radius: var(--radius-lg);
     background: var(--card);
     border: 1px solid var(--border);
-    text-align: center;
   }
 
   .step__num {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    margin-bottom: 16px;
-    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    border-radius: 10px;
     background: var(--accent-dim);
     border: 1px solid rgba(34, 211, 238, 0.2);
     color: var(--accent-bright);
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
   }
 
   .step__title {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
     font-family: var(--font-display);
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -79,13 +129,13 @@ const steps = [
   .step__text {
     margin: 0;
     color: var(--muted);
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.55;
   }
 
-  @media (min-width: 700px) {
-    .steps {
-      grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 900px) {
+    .modes {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
