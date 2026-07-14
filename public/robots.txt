@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eddie4k-code.github.io/bettorindex/sitemap-index.xml

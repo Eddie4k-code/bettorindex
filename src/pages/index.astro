@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import Hero from '../components/Hero.astro';
@@ -12,9 +13,19 @@ import SupportedBooks from '../components/SupportedBooks.astro';
 import FAQ from '../components/FAQ.astro';
 import Disclaimer from '../components/Disclaimer.astro';
 import DownloadCTA from '../components/DownloadCTA.astro';
+import { buildHomepageSchema } from '../data/schema';
+import { DEFAULT_DESCRIPTION } from '../data/seo';
+
+const homepageSchema = buildHomepageSchema(Astro.site, import.meta.env.BASE_URL);
+const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="BettorIndex — Sports Betting Research Tool">
+<BaseLayout
+  title="Sports Betting Research Tool for NBA, MLB & NFL Props & Game Lines | BettorIndex"
+  description={DEFAULT_DESCRIPTION}
+  canonicalPath="/"
+>
+  <JsonLd slot="head" data={homepageSchema} />
   <SiteHeader slot="header" />
   <Hero />
   <ProductSpotlight />
@@ -26,5 +37,29 @@ import DownloadCTA from '../components/DownloadCTA.astro';
   <FAQ />
   <Disclaimer />
   <DownloadCTA />
+  <p class="guides-cta container">
+    New to sports betting research?
+    <a href={`${base}guides/`}>Read our guides</a> or learn
+    <a href={`${base}about/`}>about BettorIndex</a>.
+  </p>
   <SiteFooter slot="footer" />
 </BaseLayout>
+
+<style>
+  .guides-cta {
+    margin: 0 auto 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .guides-cta a {
+    color: var(--accent-bright);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .guides-cta a:hover {
+    text-decoration: underline;
+  }
+</style>

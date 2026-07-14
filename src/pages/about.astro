@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import { absoluteUrl, CONTACT_EMAIL, GITHUB_URL, SITE_NAME } from '../data/seo';
+
+const base = import.meta.env.BASE_URL;
+const siteUrl = absoluteUrl('/', Astro.site, base);
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: `About ${SITE_NAME}`,
+  url: absoluteUrl('/about/', Astro.site, base),
+  description:
+    'BettorIndex is a sports betting research tool for NBA, MLB, and NFL player props and game lines — a decision aid, not a sportsbook or picks service.',
+  mainEntity: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: siteUrl,
+    sameAs: [GITHUB_URL],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: CONTACT_EMAIL,
+      contactType: 'customer support',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="About BettorIndex — Sports Betting Research Tool"
+  description="BettorIndex is a sports betting research tool for NBA, MLB, and NFL. Learn how we research player props and game lines — decision aid, not picks."
+  canonicalPath="/about/"
+>
+  <JsonLd slot="head" data={aboutSchema} />
+  <SiteHeader slot="header" />
+
+  <div class="about-page">
+    <div class="container container--narrow prose">
+      <p class="section-label">About</p>
+      <h1>About BettorIndex</h1>
+      <p class="page-subtitle">
+        A sports betting research tool for NBA, MLB, and NFL — player props and game lines on one card.
+      </p>
+
+      <section class="card">
+        <h2>What is BettorIndex?</h2>
+        <p>
+          BettorIndex helps you <strong>research the bet before you place it</strong>. Each card combines trends,
+          leans, and best available odds from BetMGM, DraftKings, FanDuel, and Fanatics. It is a decision aid —
+          not a sportsbook, odds board, or picks service.
+        </p>
+
+        <h2>How do we score research?</h2>
+        <p>
+          <strong>Player props</strong> use weighted recent hit rates compared to implied odds. That feeds the
+          Market Read (Opportunity, Worth Watching, or Potential Pass) on prop cards only.
+        </p>
+        <p>
+          <strong>Game lines</strong> use venue plus head-to-head rates when enough history exists. Moneyline uses
+          win rates, spreads use cover rates, and totals combine home, away, and head-to-head clear rates per
+          Over/Under direction. Last-N overall records are context — they do not drive game-line leans.
+        </p>
+        <p>
+          Split Market ranges (when books disagree on lines or prices) and injuries are informational context.
+          They do not change game-line lean direction.
+        </p>
+
+        <h2>Who built BettorIndex?</h2>
+        <p>
+          BettorIndex is built by Edward O'Connor as an independent sports betting research project. The marketing
+          site and iOS app share the same research-card philosophy: scan, compare, decide — without promising
+          outcomes.
+        </p>
+
+        <h2>Responsible gambling</h2>
+        <p>
+          BettorIndex provides analytics for entertainment and informational purposes only. Users are solely
+          responsible for any betting decisions. If you or someone you know has a gambling problem, call
+          <strong>1-800-GAMBLER</strong> (US) or contact your local responsible gambling resources.
+        </p>
+
+        <p>
+          Read our <a href={`${base}privacy/`}>Privacy Policy</a> and <a href={`${base}terms/`}>Terms of Use</a>,
+          or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <Disclaimer />
+  <SiteFooter slot="footer" />
+</BaseLayout>
+
+<style>
+  .about-page {
+    padding: 48px 0 24px;
+  }
+
+  .about-page h1 {
+    margin: 8px 0 12px;
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 44px);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .about-page h2 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--accent-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .about-page h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .about-page p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .about-page a {
+    color: var(--accent-bright);
+    font-weight: 600;
+  }
+</style>
