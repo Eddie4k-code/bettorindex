@@ -28,6 +28,6 @@ BetMGM, DraftKings, FanDuel, and Fanatics. Split Market ranges appear when books
 
 ## Learn more
 
-- [Player prop research guide](/bettorindex/guides/player-prop-research/)
-- [Game line research guide](/bettorindex/guides/game-line-research/)
-- [How it works](/bettorindex/#how-it-works) on the homepage
+- [Player prop research guide](/guides/player-prop-research/)
+- [Game line research guide](/guides/game-line-research/)
+- [How it works](/#how-it-works) on the homepage

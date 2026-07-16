@@ -43,4 +43,4 @@ Game Lines use team or direction leans instead — Market Read does not apply th
 
 ## Where can you see prop card sections on the site?
 
-Browse the [prop market card anatomy](/bettorindex/#prop-markets) on the homepage or read the [sports betting research FAQ](/bettorindex/#faq).
+Browse the [prop market card anatomy](/#prop-markets) on the homepage or read the [sports betting research FAQ](/#faq).
