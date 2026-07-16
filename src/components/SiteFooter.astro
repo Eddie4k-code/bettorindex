@@ -1,5 +1,8 @@
 ---
+import { assetUrl, LOGO_IMAGE } from '../data/seo';
+
 const base = import.meta.env.BASE_URL;
+const logoUrl = assetUrl(LOGO_IMAGE, base);
 const year = new Date().getFullYear();
 ---
 
@@ -7,11 +10,8 @@ const year = new Date().getFullYear();
   <div class="container footer__inner">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src={`${base}images/icon.png`} alt="" width="32" height="32" class="footer__icon" />
-        <div>
-          <p class="footer__name">BettorIndex</p>
-          <p class="footer__tagline">Sports betting research for NBA, MLB, and NFL — player props and game lines.</p>
-        </div>
+        <img src={logoUrl} alt="BettorIndex" class="footer__logo" />
+        <p class="footer__tagline">Sports betting research for NBA, MLB, and NFL — player props and game lines.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
@@ -54,20 +54,15 @@ const year = new Date().getFullYear();
 
   .footer__brand {
     display: flex;
-    align-items: center;
-    gap: 14px;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 360px;
   }
 
-  .footer__icon {
-    border-radius: 8px;
-  }
-
-  .footer__name {
-    margin: 0 0 4px;
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
+  .footer__logo {
+    height: 48px;
+    width: auto;
+    display: block;
   }
 
   .footer__tagline {

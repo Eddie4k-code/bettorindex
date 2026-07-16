@@ -4,6 +4,8 @@ import {
   assetUrl,
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
+  FAVICON_IMAGE,
+  ICON_IMAGE,
   SITE_NAME,
   THEME_COLOR,
 } from '../data/seo';
@@ -29,8 +31,8 @@ const {
 const base = import.meta.env.BASE_URL;
 const canonicalUrl = absoluteUrl(canonicalPath ?? Astro.url.pathname, Astro.site, base);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : absoluteUrl(assetUrl(ogImage, base), Astro.site, base);
-const iconUrl = assetUrl('favicon.png', base);
-const appleTouchIconUrl = assetUrl('images/icon.png', base);
+const iconUrl = assetUrl(FAVICON_IMAGE, base);
+const appleTouchIconUrl = assetUrl(ICON_IMAGE, base);
 ---
 
 <!doctype html>

@@ -5,6 +5,10 @@ export const DEFAULT_DESCRIPTION =
 
 export const DEFAULT_OG_IMAGE = 'og-image.jpg';
 
+export const LOGO_IMAGE = 'images/logo.png';
+export const ICON_IMAGE = 'images/icon.png';
+export const FAVICON_IMAGE = 'favicon.png';
+
 export const THEME_COLOR = '#06080d';
 
 export const GITHUB_URL = 'https://github.com/Eddie4k-code/bettorindex';

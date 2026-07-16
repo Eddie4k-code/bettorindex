@@ -5,12 +5,13 @@ import {
   CONTACT_EMAIL,
   DEFAULT_DESCRIPTION,
   GITHUB_URL,
+  LOGO_IMAGE,
   SITE_NAME,
 } from './seo';
 
 export function buildHomepageSchema(site: string | URL = import.meta.env.SITE, base = import.meta.env.BASE_URL) {
   const siteUrl = absoluteUrl('/', site, base);
-  const logoUrl = absoluteUrl(assetUrl('images/icon.png', base), site, base);
+  const logoUrl = absoluteUrl(assetUrl(LOGO_IMAGE, base), site, base);
   const ogImageUrl = absoluteUrl(assetUrl('og-image.jpg', base), site, base);
 
   return {
@@ -83,7 +84,7 @@ export function buildArticleSchema(options: {
   const { title, description, path, publishDate, updatedDate, site, base } = options;
   const siteUrl = absoluteUrl('/', site, base);
   const pageUrl = absoluteUrl(path, site, base);
-  const logoUrl = absoluteUrl(assetUrl('images/icon.png', base), site, base);
+  const logoUrl = absoluteUrl(assetUrl(LOGO_IMAGE, base), site, base);
 
   return {
     '@context': 'https://schema.org',
