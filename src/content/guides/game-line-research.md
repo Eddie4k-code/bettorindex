@@ -42,4 +42,4 @@ Game line cards show **relevant injuries for both teams** in the matchup — not
 
 ## See game line card sections
 
-Visit the [game line card anatomy](/bettorindex/#game-lines) on the homepage or the [FAQ](/bettorindex/#faq) for more detail.
+Visit the [game line card anatomy](/#game-lines) on the homepage or the [FAQ](/#faq) for more detail.

@@ -24,6 +24,6 @@ BetMGM, DraftKings, FanDuel, and Fanatics. Each card surfaces the best available
 
 ## Where to start
 
-- [Player prop research guide](/bettorindex/guides/player-prop-research/)
-- [Game line research guide](/bettorindex/guides/game-line-research/)
-- [Prop card sections](/bettorindex/#prop-markets) and [game line sections](/bettorindex/#game-lines) on the homepage
+- [Player prop research guide](/guides/player-prop-research/)
+- [Game line research guide](/guides/game-line-research/)
+- [Prop card sections](/#prop-markets) and [game line sections](/#game-lines) on the homepage

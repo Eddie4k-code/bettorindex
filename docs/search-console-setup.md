@@ -1,11 +1,11 @@
 # Google Search Console Setup
 
-Post-deploy checklist for `https://eddie4k-code.github.io/bettorindex/`.
+Post-deploy checklist for `https://bettorindex.app/`.
 
 ## 1. Add the property
 
 1. Open [Google Search Console](https://search.google.com/search-console).
-2. Add property: **URL prefix** → `https://eddie4k-code.github.io/bettorindex/`
+2. Add property: **URL prefix** → `https://bettorindex.app/`
 3. Verify ownership using one of:
    - **HTML tag** — add the meta tag to `src/layouts/BaseLayout.astro` temporarily, deploy, verify, then remove if desired
    - **GitHub Pages** — if using a custom domain later, switch verification method
@@ -15,13 +15,13 @@ Post-deploy checklist for `https://eddie4k-code.github.io/bettorindex/`.
 After deploy, submit:
 
 ```
-https://eddie4k-code.github.io/bettorindex/sitemap-index.xml
+https://bettorindex.app/sitemap-index.xml
 ```
 
 Confirm `robots.txt` is live at:
 
 ```
-https://eddie4k-code.github.io/bettorindex/robots.txt
+https://bettorindex.app/robots.txt
 ```
 
 ## 3. Validate structured data

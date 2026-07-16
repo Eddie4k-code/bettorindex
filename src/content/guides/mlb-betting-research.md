@@ -33,6 +33,6 @@ BettorIndex tracks BetMGM, DraftKings, FanDuel, and Fanatics for MLB research ca
 
 ## Related guides
 
-- [Player prop research](/bettorindex/guides/player-prop-research/)
-- [Game line research](/bettorindex/guides/game-line-research/)
-- [Sports betting research FAQ](/bettorindex/#faq)
+- [Player prop research](/guides/player-prop-research/)
+- [Game line research](/guides/game-line-research/)
+- [Sports betting research FAQ](/#faq)
