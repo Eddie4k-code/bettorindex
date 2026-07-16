@@ -1,9 +1,14 @@
+---
+import { assetUrl, ICON_IMAGE } from '../data/seo';
+
+const iconUrl = assetUrl(ICON_IMAGE, import.meta.env.BASE_URL);
+---
 <section class="section section--cta">
   <div class="container">
     <div class="cta">
       <div class="cta__glow" aria-hidden="true"></div>
       <img
-        src={`${import.meta.env.BASE_URL}images/icon.png`}
+        src={iconUrl}
         alt="BettorIndex app icon"
         width="64"
         height="64"
