@@ -1,7 +1,7 @@
 export const SITE_NAME = 'BettorIndex';
 
 export const DEFAULT_DESCRIPTION =
-  'Research NBA, MLB, and NFL player props and game lines with trends, leans, and best odds. Free iOS app — decision aid, not a sportsbook.';
+  'Research NBA, MLB, and NFL player props and game lines with trends, leans, and best odds. iOS and Android app — decision aid, not a sportsbook.';
 
 export const DEFAULT_OG_IMAGE = 'og-image.jpg';
 

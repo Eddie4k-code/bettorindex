@@ -2,80 +2,216 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { CONTACT_EMAIL } from '../data/seo';
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Terms of Use — BettorIndex"
-  description="BettorIndex terms of use and AI chat disclosures for the sports betting research app."
+  title="Terms of Use and EULA — BettorIndex"
+  description="BettorIndex terms of use, end user license agreement, and subscription disclosures for the sports betting research app on iOS and Android."
   canonicalPath="/terms/"
 >
   <SiteHeader slot="header" />
 
   <div class="legal-page">
     <div class="container container--narrow prose">
-      <h1>Terms of Use</h1>
-      <p class="page-subtitle">Terms of Use and AI Chat Disclosures for BettorIndex.</p>
-
-      <section class="card" style="margin-bottom: 24px;">
-        <h2>AI Chat Disclaimer</h2>
-        <p>
-          You are interacting with an AI language model. Responses are generated and may not always be accurate,
-          complete, or appropriate. Do not rely on AI responses for medical, legal, or financial advice.
-          Please report any inappropriate content.
-        </p>
-
-        <h2 style="margin-top: 28px;">AI Chat Privacy</h2>
-        <p>
-          Your chat messages may be sent to our servers for processing and improvement of the AI experience.
-          For details, see our <a href={`${base}privacy/`}>Privacy Policy</a>.
-        </p>
-      </section>
+      <h1>Terms of Use and End User License Agreement</h1>
+      <p class="page-subtitle">
+        Terms of Use and EULA for BettorIndex on iOS (App Store) and Android (Google Play).
+      </p>
 
       <section class="card">
-        <h2>Terms of Use</h2>
-        <p class="effective-date">Effective Date: March 28th, 2026</p>
+        <p class="effective-date">Effective Date: July 17th, 2026</p>
 
-        <h3>1. Acceptance</h3>
         <p>
-          By using the App, you agree to these Terms of Use.
+          These Terms of Use and End User License Agreement ("Terms") govern your access to and use of the BettorIndex
+          mobile application and related services (collectively, the "App") provided by BettorIndex ("we", "us", or "our").
+          By downloading, installing, accessing, or using the App, you agree to these Terms. If you do not agree, do not
+          use the App.
+        </p>
+        <p>
+          On iOS, these Terms supplement Apple's Standard Licensed Application End User License Agreement where applicable.
+          On Android, Google Play does not provide a default app-specific end user license agreement; these Terms define
+          your license to use the App. Your use of the App is also subject to the applicable app store's terms (Apple
+          Media Services or Google Play Terms of Service) and our <a href={`${base}privacy/`}>Privacy Policy</a>.
         </p>
 
-        <h3>2. No Betting or Gambling</h3>
+        <h2>1. Acceptance</h2>
         <p>
-          This App provides analytics and information for entertainment and informational purposes only. We do not provide
-          betting services or encourage gambling. Users are solely responsible for any decisions made based on the
-          information provided.
+          By using the App, you represent that you are at least 17 years old and have the legal capacity to enter into
+          these Terms. If you use the App on behalf of an organization, you represent that you have authority to bind
+          that organization.
         </p>
 
-        <h3>3. AI Chat Disclaimer</h3>
+        <h2>2. License Grant and Restrictions</h2>
         <p>
-          You are interacting with an AI language model. Responses are generated and may not always be accurate, complete,
-          or appropriate. Do not rely on AI responses for medical, legal, or financial advice. Please report any
-          inappropriate content.
+          Subject to your compliance with these Terms and payment of applicable fees, we grant you a limited,
+          non-exclusive, non-transferable, revocable license to install and use the App on devices you own or control,
+          solely for your personal, non-commercial use.
+        </p>
+        <p>A paid subscription entitles you to access paid features only for the active billing period. It does not grant you a perpetual license to any content, data, or materials displayed in the App.</p>
+        <p>You may not:</p>
+        <ul>
+          <li>Copy, modify, adapt, translate, or create derivative works of the App or its content.</li>
+          <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App, except where applicable law expressly permits.</li>
+          <li>Rent, lease, lend, sell, sublicense, redistribute, or make the App or its content available to any third party.</li>
+          <li>Circumvent, disable, or interfere with subscription checks, paywalls, or access controls.</li>
+          <li>Use the App for any unlawful purpose or in violation of applicable gambling or gaming laws in your jurisdiction.</li>
+          <li>Scrape, bulk-export, or systematically harvest data from the App for resale, redistribution, or to build a competing product or service.</li>
+        </ul>
+
+        <h2>3. Intellectual Property</h2>
+        <p>
+          The App, including its name, logo, user interface, design, software, algorithms, scoring logic, text, graphics,
+          and other content, is owned by us or our licensors and is protected by intellectual property laws. Except for the
+          limited license granted above, no rights are transferred to you. Trademarks, logos, and names of sportsbooks,
+          leagues, teams, and other third parties belong to their respective owners.
         </p>
 
-        <h3>4. Third-Party Data</h3>
+        <h2>4. Term and Termination</h2>
         <p>
-          The App uses data from third-party APIs. We are not responsible for the accuracy, completeness, or availability
-          of this data. Features may be unavailable or inaccurate if third-party services are interrupted.
+          These Terms remain in effect while you use the App and comply with them. If you have a subscription, your
+          license to paid features continues only while your subscription is active and in good standing.
+        </p>
+        <p>
+          We may suspend or terminate your access to the App at any time, with or without notice, if we reasonably
+          believe you have violated these Terms, engaged in fraud or abuse, or if we discontinue the App or any feature.
+          You may stop using the App at any time. Upon termination, your license ends and you must cease use and uninstall
+          the App. Sections that by their nature should survive termination (including intellectual property, disclaimers,
+          limitation of liability, and indemnification) will survive.
         </p>
 
-        <h3>5. Limitation of Liability</h3>
+        <h2>5. Updates and Support</h2>
         <p>
-          Use of the App is at your own risk. We are not liable for any damages or losses resulting from use of the App
-          or reliance on its content.
+          We may release updates, patches, or new versions of the App. Some updates may be required for continued use.
+          We are not obligated to provide maintenance, support, or new features. Updates are subject to these Terms
+          unless we provide separate terms that you accept.
         </p>
 
-        <h3>6. Changes to Terms</h3>
+        <h2>6. No Betting or Gambling</h2>
         <p>
-          We may update these Terms of Use at any time. Continued use of the App constitutes acceptance of the new terms.
+          The App provides analytics and information for entertainment and informational purposes only. We do not operate
+          a sportsbook, accept wagers, or encourage gambling. We do not guarantee any outcome, edge, or profit. Users are
+          solely responsible for any decisions they make, including any wagers placed with third-party sportsbooks, and
+          for complying with applicable laws in their jurisdiction.
         </p>
 
-        <h3>7. Contact</h3>
+        <h2>7. No Artificial Intelligence Features</h2>
         <p>
-          For questions about these Terms, contact us at: <strong>eddie4k1080@gmail.com</strong>
+          BettorIndex does not currently use artificial intelligence, machine learning, or generative AI to produce
+          content, recommendations, or responses within the App. Analytics, trends, and leans are derived from structured
+          sports and odds data and fixed rules — not from AI models. If we introduce AI-powered features in the future, we
+          will update these Terms and our Privacy Policy before or at launch.
+        </p>
+
+        <h2>8. Subscriptions and Payments</h2>
+        <p>
+          Subscriptions and in-app purchases are processed by the platform store through which you obtained the App (Apple
+          App Store or Google Play), not directly by us. You agree to the applicable store's terms and policies.
+        </p>
+        <p><strong>Shared terms (iOS and Android)</strong></p>
+        <ul>
+          <li><strong>Auto-renewal:</strong> Subscriptions renew automatically unless you cancel before the end of the current billing period.</li>
+          <li><strong>Pricing:</strong> We may change subscription prices. The store will notify you where required by its policies.</li>
+          <li><strong>Refunds:</strong> Refund requests are handled solely by Apple or Google in accordance with their respective policies. We do not process refunds directly.</li>
+          <li><strong>Trials and intro offers:</strong> If offered, free trials or introductory pricing convert to a paid subscription unless you cancel before the trial or introductory period ends, as described at purchase.</li>
+          <li><strong>No guaranteed access:</strong> Payment of a subscription fee does not guarantee uninterrupted access, availability of any particular sport, market, sportsbook, data feed, or accuracy of any output.</li>
+        </ul>
+        <p><strong>Apple App Store (iOS)</strong></p>
+        <ul>
+          <li>Billing is through Apple. Manage or cancel your subscription in <strong>Settings → Apple ID → Subscriptions</strong>.</li>
+          <li>To avoid renewal, cancel at least 24 hours before the end of the current billing period.</li>
+        </ul>
+        <p><strong>Google Play (Android)</strong></p>
+        <ul>
+          <li>Billing is through Google Play. Manage or cancel your subscription in <strong>Google Play → Payments &amp; subscriptions → Subscriptions</strong> (or the equivalent in your Play Store app).</li>
+          <li>Cancel before renewal in accordance with Google Play's billing cycle rules.</li>
+        </ul>
+
+        <h2>9. Service Availability</h2>
+        <p>
+          The App and all data, features, and content are provided on an <strong>"as available"</strong> basis. We do
+          not guarantee any minimum uptime, availability, response time, or performance level.
+        </p>
+        <p>
+          The App may be unavailable, delayed, or limited at any time, with or without notice, due to maintenance,
+          updates, bugs, capacity limits, network failures, device or operating system issues, or outages or changes at
+          third-party data providers, sportsbooks, or infrastructure partners. We may modify, suspend, or discontinue
+          any part of the App at any time.
+        </p>
+
+        <h2>10. Data and Analytics Accuracy</h2>
+        <p>
+          Sports statistics, odds, lines, trends, leans, hit rates, and "best available" prices depend on third-party
+          sources and our processing logic. This information may be delayed, incomplete, incorrect, outdated, or
+          unavailable. Odds and lines change frequently and may differ from what is shown in the App at the time you
+          place a wager.
+        </p>
+        <p>
+          You are solely responsible for verifying all lines, prices, rules, and eligibility with your sportsbook before
+          wagering. Historical performance, trends, or hit rates do not predict future results.
+        </p>
+
+        <h2>11. Third-Party Services</h2>
+        <p>
+          The App relies on third-party APIs, data providers, and platform services. We do not control and are not
+          responsible for the accuracy, completeness, timeliness, or availability of third-party data or services.
+          Features may be unavailable or inaccurate if third-party services are interrupted, changed, or discontinued.
+          Your use of third-party sportsbooks or other services is governed by their terms, not ours.
+        </p>
+
+        <h2>12. Disclaimer of Warranties</h2>
+        <p>
+          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APP AND ALL CONTENT ARE PROVIDED <strong>"AS IS"</strong>
+          AND <strong>"AS AVAILABLE"</strong> WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY,
+          INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+          WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF HARMFUL COMPONENTS, OR
+          THAT ANY DATA OR OUTPUT WILL BE ACCURATE OR RELIABLE.
+        </p>
+        <p>
+          Some jurisdictions do not allow the exclusion of implied warranties; in those jurisdictions, the above exclusions
+          apply to the fullest extent permitted by law.
+        </p>
+
+        <h2>13. Limitation of Liability</h2>
+        <p>
+          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE AND OUR AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AND
+          LICENSORS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE
+          DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OR WAGERS, ARISING OUT OF OR RELATED TO YOUR USE OF
+          OR INABILITY TO USE THE APP OR ANY CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE),
+          STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+        </p>
+        <p>
+          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, OUR TOTAL AGGREGATE LIABILITY FOR ANY CLAIM ARISING OUT OF
+          OR RELATING TO THE APP OR THESE TERMS WILL NOT EXCEED THE GREATER OF (A) THE AMOUNTS YOU PAID US FOR THE APP OR
+          SUBSCRIPTION IN THE TWELVE (12) MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE HUNDRED U.S.
+          DOLLARS (USD $100).
+        </p>
+        <p>
+          Some jurisdictions do not allow certain limitations of liability; in those jurisdictions, our liability is limited
+          to the fullest extent permitted by law.
+        </p>
+
+        <h2>14. Indemnification</h2>
+        <p>
+          To the extent permitted by applicable law, you agree to indemnify, defend, and hold harmless BettorIndex and
+          its affiliates, officers, directors, employees, and licensors from and against any claims, liabilities, damages,
+          losses, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the App,
+          your violation of these Terms, or your reliance on any content in the App.
+        </p>
+
+        <h2>15. Changes to These Terms</h2>
+        <p>
+          We may update these Terms from time to time. Material changes will be posted in the App and/or on our website
+          with an updated effective date. Your continued use of the App after changes become effective constitutes
+          acceptance of the revised Terms. If you do not agree to the updated Terms, you must stop using the App and cancel
+          any active subscription through your app store.
+        </p>
+
+        <h2>16. Contact</h2>
+        <p>
+          For questions about these Terms, contact us at: <strong>{CONTACT_EMAIL}</strong>
         </p>
 
         <p style="margin-top: 28px;">
