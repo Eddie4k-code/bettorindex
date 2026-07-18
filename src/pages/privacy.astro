@@ -2,13 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { CONTACT_EMAIL } from '../data/seo';
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title="Privacy Policy — BettorIndex"
-  description="BettorIndex privacy policy — how we collect, use, and protect your information when you use the sports betting research app."
+  description="BettorIndex privacy policy — how we collect, use, and protect your information on iOS and Android."
   canonicalPath="/privacy/"
 >
   <SiteHeader slot="header" />
@@ -19,60 +20,94 @@ const base = import.meta.env.BASE_URL;
       <p class="page-subtitle">How BettorIndex collects, uses, and protects your information.</p>
 
       <section class="card">
-        <p class="effective-date">Effective Date: March 28th, 2026</p>
+        <p class="effective-date">Effective Date: July 17th, 2026</p>
 
         <p>
           This Privacy Policy describes how BettorIndex ("we", "us", or "our") collects, uses, and protects your
-          information when you use our mobile application (the "App").
+          information when you use our mobile application on iOS and Android (the "App") and related website.
         </p>
 
         <h2>1. Information We Collect</h2>
         <ul>
-          <li><strong>User-Provided Data:</strong> When you use features such as AI Chat, we collect the messages you send and receive.</li>
-          <li><strong>Usage Data:</strong> We may collect information about how you use the App, such as feature usage, device type, and operating system.</li>
+          <li>
+            <strong>Subscription and purchase data:</strong> If you subscribe or make in-app purchases, Apple App Store or
+            Google Play processes payment. We may receive entitlement or transaction metadata (such as whether a subscription
+            is active, expired, or renewed). We do not receive your full payment card details.
+          </li>
+          <li>
+            <strong>Usage data:</strong> We may collect information about how you use the App, such as feature usage,
+            session activity, app version, device type, and operating system (iOS or Android).
+          </li>
+          <li>
+            <strong>Support communications:</strong> If you contact us, we collect the information you provide (such as
+            your email address and message content).
+          </li>
         </ul>
 
         <h2>2. How We Use Your Information</h2>
         <ul>
-          <li>To provide and improve App features, including AI Chat and analytics.</li>
+          <li>To provide, operate, and improve App features and analytics.</li>
+          <li>To verify subscription status and deliver paid features.</li>
           <li>To respond to user inquiries and support requests.</li>
-          <li>To monitor and moderate content for safety and compliance.</li>
+          <li>To maintain security, prevent fraud, and comply with legal obligations.</li>
         </ul>
 
         <h2>3. Data Sharing</h2>
         <ul>
-          <li><strong>Third-Party APIs:</strong> We use third-party APIs to provide sports data and AI chat functionality. Your data may be shared with these services as needed to deliver features.</li>
-          <li><strong>No Sale of Data:</strong> We do not sell your personal data to third parties.</li>
+          <li>
+            <strong>Third-party APIs:</strong> We use third-party services to provide sports data, odds, and related
+            content. Limited technical data may be shared with these providers as needed to deliver App features.
+          </li>
+          <li>
+            <strong>App stores:</strong> Apple and Google process payments and subscription management. Their use of your
+            data is governed by their respective privacy policies when you subscribe or purchase through their stores.
+          </li>
+          <li>
+            <strong>Service providers:</strong> We may use vendors who help us operate the App (such as hosting or
+            analytics). They may access information only to perform services on our behalf.
+          </li>
+          <li><strong>No sale of data:</strong> We do not sell your personal data to third parties.</li>
         </ul>
 
-        <h2>4. Data Security</h2>
+        <h2>4. Artificial Intelligence</h2>
         <p>
-          We use reasonable measures to protect your information. However, no method of transmission or storage is 100% secure.
+          BettorIndex does not currently use artificial intelligence, machine learning, or generative AI to process your
+          personal data or to generate App content. We do not collect chat messages or similar inputs for AI processing.
         </p>
 
-        <h2>5. User Rights</h2>
+        <h2>5. Data Security</h2>
+        <p>
+          We use reasonable measures to protect your information. However, no method of transmission or storage is 100%
+          secure, and we cannot guarantee absolute security.
+        </p>
+
+        <h2>6. User Rights</h2>
         <ul>
-          <li>You may request deletion of your data by contacting us at <strong>eddie4k1080@gmail.com</strong>.</li>
-          <li>You may report inappropriate content via the in-app reporting feature.</li>
+          <li>You may request deletion of your data by contacting us at <strong>{CONTACT_EMAIL}</strong>.</li>
+          <li>
+            Subscription management and certain purchase records are controlled by Apple or Google; you may also use your
+            app store account settings to manage those records.
+          </li>
         </ul>
 
-        <h2>6. Children's Privacy</h2>
+        <h2>7. Children's Privacy</h2>
         <p>
           The App is not intended for children under 17. If you are under 17, please do not use the App.
         </p>
 
-        <h2>7. Changes to This Policy</h2>
+        <h2>8. Changes to This Policy</h2>
         <p>
-          We may update this Privacy Policy from time to time. Changes will be posted in the App and/or on our website.
+          We may update this Privacy Policy from time to time. Changes will be posted in the App and/or on our website
+          with an updated effective date.
         </p>
 
-        <h2>8. Contact Us</h2>
+        <h2>9. Contact Us</h2>
         <p>
-          If you have questions about this policy, contact us at: <strong>eddie4k1080@gmail.com</strong>
+          If you have questions about this policy, contact us at: <strong>{CONTACT_EMAIL}</strong>
         </p>
 
         <p style="margin-top: 28px;">
-          See also our <a href={`${base}terms/`}>Terms of Use</a>.
+          See also our <a href={`${base}terms/`}>Terms of Use and EULA</a>.
         </p>
       </section>
     </div>
