@@ -86,6 +86,11 @@ export const sharedFaq: FaqItem[] = [
       'Prop Markets and Game Lines cover NBA, MLB, and NFL. We track BetMGM, DraftKings, FanDuel, and Fanatics. Not every market will have all four books available at the same time.',
   },
   {
+    question: 'How often are lines and odds updated?',
+    answer:
+      'For matchups starting within the next 4 hours, BettorIndex refreshes Prop Markets and Game Lines every 15 minutes. For matchups within the next 24 hours, we refresh every 2 hours (120 minutes). After a line moves, leans and best prices may take a few extra minutes to appear while our backend processes the update.',
+  },
+  {
     question: 'How does BettorIndex score research?',
     answer:
       'Props: weighted recent hit rates compared to implied odds, which feeds the Market Read. Game lines: a simple sum of venue rate plus head-to-head rate when enough history exists (totals add both teams\' clear rates per direction). Injuries and split markets are context — they do not change game-line lean direction.',

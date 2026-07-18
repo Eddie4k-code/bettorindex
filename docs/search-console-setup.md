@@ -28,7 +28,7 @@ https://bettorindex.app/robots.txt
 
 Test the homepage with [Google Rich Results Test](https://search.google.com/test/rich-results):
 
-- `FAQPage` (16 questions)
+- `FAQPage` (17 questions)
 - `WebSite`
 - `Organization`
 - `SoftwareApplication`
