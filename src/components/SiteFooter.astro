@@ -1,8 +1,8 @@
 ---
-import { assetUrl, LOGO_IMAGE } from '../data/seo';
+import { assetUrl, NAV_LOGO_IMAGE } from '../data/seo';
 
 const base = import.meta.env.BASE_URL;
-const logoUrl = assetUrl(LOGO_IMAGE, base);
+const logoUrl = assetUrl(NAV_LOGO_IMAGE, base);
 const year = new Date().getFullYear();
 ---
 
@@ -60,7 +60,7 @@ const year = new Date().getFullYear();
   }
 
   .footer__logo {
-    height: 48px;
+    height: 56px;
     width: auto;
     display: block;
   }
