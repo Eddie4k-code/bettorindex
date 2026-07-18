@@ -1,6 +1,7 @@
 import { allFaqItems } from './faq';
 import {
   absoluteUrl,
+  APP_STORE_URL,
   assetUrl,
   CONTACT_EMAIL,
   DEFAULT_DESCRIPTION,
@@ -49,11 +50,13 @@ export function buildHomepageSchema(site: string | URL = import.meta.env.SITE, b
         operatingSystem: 'iOS',
         description: DEFAULT_DESCRIPTION,
         url: siteUrl,
+        downloadUrl: APP_STORE_URL,
         image: ogImageUrl,
         offers: {
           '@type': 'Offer',
           price: '0',
           priceCurrency: 'USD',
+          description: 'Free download with optional in-app Premium subscription',
         },
       },
       {

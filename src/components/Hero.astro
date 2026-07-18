@@ -1,6 +1,7 @@
 ---
 import PropCardPreview from './PropCardPreview.astro';
 import GameLineCardPreview from './GameLineCardPreview.astro';
+import { APP_STORE_URL } from '../data/seo';
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -22,11 +23,15 @@ const base = import.meta.env.BASE_URL;
       </p>
 
       <div class="hero__actions">
-        <a href={`${base}#products`} class="btn btn--primary">See what you can research</a>
+        <a href={APP_STORE_URL} class="btn btn--primary" rel="noopener noreferrer" target="_blank">
+          Download on the App Store
+        </a>
+        <a href={`${base}#products`} class="btn btn--ghost">See what you can research</a>
       </div>
 
       <div class="hero__meta">
-        <span class="badge">iOS — Coming Soon</span>
+        <span class="badge">Available on iOS</span>
+        <span class="badge badge--muted">Android — Coming Soon</span>
         <div class="hero__sports">
           <span class="hero__sport hero__sport--nba">NBA</span>
           <span class="hero__sport hero__sport--mlb">MLB</span>
@@ -156,6 +161,9 @@ const base = import.meta.env.BASE_URL;
   }
 
   .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-bottom: 24px;
   }
 
