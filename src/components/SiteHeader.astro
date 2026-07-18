@@ -1,8 +1,8 @@
 ---
-import { assetUrl, NAV_LOGO_IMAGE } from '../data/seo';
+import { assetUrl, NAV_ICON_IMAGE } from '../data/seo';
 
 const base = import.meta.env.BASE_URL;
-const logoUrl = assetUrl(NAV_LOGO_IMAGE, base);
+const iconUrl = assetUrl(NAV_ICON_IMAGE, base);
 const navLinks = [
   { href: `${base}#products`, label: 'Research' },
   { href: `${base}#prop-markets`, label: 'Player Props' },
@@ -17,8 +17,11 @@ const navLinks = [
 
 <header class="header">
   <div class="container header__inner">
-    <a href={base} class="header__brand">
-      <img src={logoUrl} alt="BettorIndex" class="header__logo" width="574" height="418" />
+    <a href={base} class="header__brand" aria-label="BettorIndex home">
+      <img src={iconUrl} alt="" class="header__icon" width="325" height="280" />
+      <span class="header__wordmark" aria-hidden="true">
+        Bettor<span class="header__wordmark-accent">Index</span>
+      </span>
     </a>
     <nav class="header__nav" aria-label="Main navigation">
       {navLinks.map((link) => (
@@ -43,13 +46,14 @@ const navLinks = [
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .header__brand {
     display: flex;
     align-items: center;
+    gap: 12px;
     text-decoration: none;
     flex-shrink: 0;
   }
@@ -59,10 +63,26 @@ const navLinks = [
     text-decoration: none;
   }
 
-  .header__logo {
+  .header__icon {
     display: block;
-    height: 56px;
+    height: 44px;
     width: auto;
+    flex-shrink: 0;
+  }
+
+  .header__wordmark {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .header__wordmark-accent {
+    color: var(--accent-bright);
   }
 
   .header__nav {
@@ -91,8 +111,13 @@ const navLinks = [
       display: none;
     }
 
-    .header__logo {
-      height: 44px;
+    .header__icon {
+      height: 38px;
+    }
+
+    .header__wordmark {
+      font-size: 18px;
+      letter-spacing: 0.06em;
     }
   }
 </style>

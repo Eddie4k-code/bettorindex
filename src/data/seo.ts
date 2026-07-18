@@ -9,6 +9,7 @@ export const DEFAULT_OG_IMAGE = 'og-image.jpg';
 
 export const LOGO_IMAGE = 'images/logo.png';
 export const NAV_LOGO_IMAGE = 'images/nav-logo.png';
+export const NAV_ICON_IMAGE = 'images/nav-icon.png';
 export const ICON_IMAGE = 'images/icon.png';
 export const FAVICON_IMAGE = 'favicon.png';
 
