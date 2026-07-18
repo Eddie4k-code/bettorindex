@@ -1,5 +1,5 @@
 ---
-import { assetUrl, ICON_IMAGE } from '../data/seo';
+import { APP_STORE_URL, assetUrl, ICON_IMAGE } from '../data/seo';
 
 const iconUrl = assetUrl(ICON_IMAGE, import.meta.env.BASE_URL);
 ---
@@ -14,9 +14,16 @@ const iconUrl = assetUrl(ICON_IMAGE, import.meta.env.BASE_URL);
         height="64"
         class="cta__icon"
       />
-      <h2 class="cta__title">Coming to iOS</h2>
-      <p class="cta__text">Your sports betting research tool for NBA, MLB, and NFL. Android later.</p>
-      <span class="badge">Coming Soon</span>
+      <h2 class="cta__title">Download BettorIndex</h2>
+      <p class="cta__text">
+        Your sports betting research tool for NBA, MLB, and NFL. Free to start with optional Premium on iOS.
+      </p>
+      <div class="cta__actions">
+        <a href={APP_STORE_URL} class="btn btn--primary" rel="noopener noreferrer" target="_blank">
+          Download on the App Store
+        </a>
+        <span class="badge badge--muted">Android — Coming Soon</span>
+      </div>
     </div>
   </div>
 </section>
@@ -74,6 +81,16 @@ const iconUrl = assetUrl(ICON_IMAGE, import.meta.env.BASE_URL);
     margin: 0 0 20px;
     color: var(--muted);
     font-size: 15px;
-    max-width: 400px;
+    max-width: 420px;
+  }
+
+  .cta__actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
   }
 </style>
