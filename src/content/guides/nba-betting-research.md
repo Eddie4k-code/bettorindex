@@ -2,7 +2,7 @@
 title: "NBA Sports Betting Research: Props and Game Lines"
 description: "Research NBA player props and game lines with trends, leans, and best odds from BetMGM, DraftKings, FanDuel, and Fanatics on one card."
 publishDate: 2026-07-08
-updatedDate: 2026-07-08
+updatedDate: 2026-07-19
 keywords: [NBA betting research, NBA player props, NBA game lines, sports betting research tool]
 ---
 
@@ -12,7 +12,7 @@ BettorIndex is a sports betting research tool for **NBA player props** and **NBA
 
 **Prop Markets** — player Over/Under props with hit rates, home/away clears, relevant injuries, and Market Read (Opportunity, Worth Watching, Potential Pass).
 
-**Game Lines** — team moneyline, spread, and total research with venue and head-to-head records, best odds, split-market ranges, and injuries for both teams.
+**Game Lines** — team moneyline, spread, and total research with venue and head-to-head records, trend statuses (Trend Favors, Trend Supports, Mixed Signals, or No Clear Trend), best odds, split-market ranges, and injuries for both teams.
 
 ## How is NBA prop research different from game lines?
 

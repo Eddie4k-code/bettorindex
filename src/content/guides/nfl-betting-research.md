@@ -2,7 +2,7 @@
 title: "NFL Sports Betting Research: Props and Game Lines"
 description: "Research NFL player props and game lines with trends, leans, and best odds across moneyline, spread, and total markets."
 publishDate: 2026-07-08
-updatedDate: 2026-07-08
+updatedDate: 2026-07-19
 keywords: [NFL betting research, NFL player props, NFL game lines, football betting research]
 ---
 
@@ -12,15 +12,15 @@ BettorIndex is a sports betting research tool for **NFL player props** and **NFL
 
 **Prop Markets** research player Over/Under props with weighted hit rates, best line/price, injuries, and Market Read.
 
-**Game Lines** research moneyline, spread, and total matchups with venue + head-to-head signals, opposing-side context, and injuries for both teams.
+**Game Lines** research moneyline, spread, and total matchups with venue + head-to-head signals, trend statuses (Trend Favors, Trend Supports, Mixed Signals, or No Clear Trend), opposing-side context, and injuries for both teams.
 
 ## How does NFL total research work?
 
-Totals lean **Over** or **Under** based on home, away, and head-to-head clear rates — not a team pick. Cards show the best total line and juice for each direction.
+Totals classify into **Trend Favors Over/Under**, **Trend Supports**, **Mixed Signals**, or **No Clear Trend** based on home, away, and head-to-head clear rates — not a team pick. Cards show the best total line and juice for each direction.
 
 ## How does NFL spread research work?
 
-Spread leans use **cover rates** at venue plus head-to-head cover history when the sample is large enough. Last-N overall covers are shown for context but do not score the lean.
+Spread cards compare **cover rates** at venue plus head-to-head cover history when the sample is large enough, then classify into one of four trend statuses. Last-N overall covers are shown for context but do not score the trend.
 
 ## Which books are tracked?
 

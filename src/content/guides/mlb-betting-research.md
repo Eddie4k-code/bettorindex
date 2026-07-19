@@ -2,7 +2,7 @@
 title: "MLB Sports Betting Research: Props and Game Lines"
 description: "Research MLB player props and game lines with trends, leans, and best odds. A decision aid for moneyline, spread, and total markets — not picks."
 publishDate: 2026-07-08
-updatedDate: 2026-07-08
+updatedDate: 2026-07-19
 keywords: [MLB betting research, MLB player props, MLB game lines, baseball betting research]
 ---
 
@@ -11,7 +11,7 @@ BettorIndex helps you research **MLB player props** and **MLB game lines** befor
 ## What MLB markets does BettorIndex cover?
 
 - **Player props** — Over/Under research with hit rates, clears, injuries, and Market Read
-- **Game lines** — moneyline, spread, and total cards with venue/H2H records and split-market context
+- **Game lines** — moneyline, spread, and total cards with venue/H2H records, trend statuses, and split-market context
 
 ## How should you read an MLB prop card?
 
@@ -22,9 +22,9 @@ BettorIndex helps you research **MLB player props** and **MLB game lines** befor
 
 ## How should you read an MLB game line card?
 
-1. Check the lean — team (moneyline/spread) or direction (total)
-2. Read venue and head-to-head records that **drive the lean**
-3. Compare best line/odds and expand the opposing side
+1. Check the trend status — Trend Favors or Supports names a team or direction; Mixed Signals or No Clear Trend keeps both outcomes visible
+2. Read venue and head-to-head records that **support the trend**
+3. Compare best line/odds and expand the opposing side when signals are mixed or for full context
 4. Check relevant injuries for **both teams**
 
 ## Tracked sportsbooks

@@ -39,7 +39,7 @@ Market Read is a readiness signal for prop research only:
 - **Worth Watching** — a lean exists, but trend and price are not strong enough yet
 - **Potential Pass** — no strong lean, or price does not support action
 
-Game Lines use team or direction leans instead — Market Read does not apply there.
+Game Lines use Trend Favors, Trend Supports, Mixed Signals, or No Clear Trend instead — Market Read does not apply there.
 
 ## Where can you see prop card sections on the site?
 
