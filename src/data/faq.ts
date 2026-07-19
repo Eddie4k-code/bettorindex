@@ -103,7 +103,12 @@ export const sharedFaq: FaqItem[] = [
   {
     question: 'Which sports and books are supported?',
     answer:
-      'Prop Markets and Game Lines cover NBA, MLB, and NFL. We track BetMGM, DraftKings, FanDuel, and Fanatics. Not every market will have all four books available at the same time.',
+      'Prop Markets and Game Lines cover NBA, MLB, and NFL. We track BetMGM, DraftKings, FanDuel, and Fanatics. Not every market will have all four books available at the same time. College football (CFB) is coming soon, targeted for the start of the 2026–27 season.',
+  },
+  {
+    question: 'When is CFB coming to BettorIndex?',
+    answer:
+      'CFB is coming soon — expected at the beginning of the 2026–27 college football season. It will use the same research-card approach as NFL props and game lines when it launches.',
   },
   {
     question: 'How often are lines and odds updated?',
