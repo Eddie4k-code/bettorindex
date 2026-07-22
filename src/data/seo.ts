@@ -17,7 +17,7 @@ export const THEME_COLOR = '#06080d';
 
 export const GITHUB_URL = 'https://github.com/Eddie4k-code/bettorindex';
 
-export const CONTACT_EMAIL = 'eddie4k1080@gmail.com';
+export const CONTACT_EMAIL = 'support@bettorindex.app';
 
 function toSiteString(site: string | URL): string {
   return typeof site === 'string' ? site : site.href;
