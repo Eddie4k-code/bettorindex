@@ -70,8 +70,9 @@ const appleTouchIconUrl = assetUrl(ICON_IMAGE, base);
     <slot name="head" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <slot name="header" />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <slot name="footer" />

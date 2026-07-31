@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { CONTACT_EMAIL } from '../data/seo';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Accessibility — BettorIndex"
+  description="BettorIndex accessibility commitment, supported features, known limitations, and feedback contact."
+  canonicalPath="/accessibility/"
+>
+  <SiteHeader slot="header" />
+
+  <div class="legal-page">
+    <div class="container container--narrow prose">
+      <h1>Accessibility</h1>
+      <p class="page-subtitle">Our commitment to making BettorIndex usable for more people.</p>
+
+      <section class="card">
+        <p class="effective-date">Last updated: July 31, 2026</p>
+
+        <p>
+          BettorIndex is committed to improving accessibility for people with disabilities. We aim to align with
+          <strong>WCAG 2.1 Level AA</strong> over time across our iOS app and this website.
+        </p>
+
+        <h2>What we support today</h2>
+        <ul>
+          <li>Screen reader labels on major app controls, filters, tabs, cards, and account actions</li>
+          <li>Semantic HTML structure on this website, including labeled navigation and FAQ accordions</li>
+          <li>Skip-to-content link and mobile navigation menu on the website</li>
+          <li>Keyboard support for hero preview tabs on the homepage</li>
+        </ul>
+
+        <h2>Known limitations</h2>
+        <ul>
+          <li>Dynamic Type and large text scaling are not fully supported in the mobile app yet</li>
+          <li>Color contrast and touch target sizing have not been fully audited</li>
+          <li>Some advanced data-dense cards may still require multiple swipes to review all details with VoiceOver</li>
+        </ul>
+
+        <h2>Feedback</h2>
+        <p>
+          If you encounter an accessibility barrier in the app or on this site, contact us at
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Please include the screen or page, device, and
+          assistive technology you are using so we can investigate quickly.
+        </p>
+
+        <p>
+          Related policies:
+          <a href={`${base}privacy/`}>Privacy Policy</a> ·
+          <a href={`${base}terms/`}>Terms of Use</a>
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: 48px 0 80px;
+  }
+
+  .page-subtitle {
+    color: var(--muted);
+    margin-top: -8px;
+    margin-bottom: 24px;
+  }
+
+  .effective-date {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+</style>
