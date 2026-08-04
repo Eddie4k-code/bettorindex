@@ -23,13 +23,69 @@ const navLinks = [
         Bettor<span class="header__wordmark-accent">Index</span>
       </span>
     </a>
-    <nav class="header__nav" aria-label="Main navigation">
+
+    <button
+      type="button"
+      class="header__menu-button"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="Open navigation menu"
+      data-menu-toggle
+    >
+      Menu
+    </button>
+
+    <nav class="header__nav header__nav--desktop" aria-label="Main navigation">
       {navLinks.map((link) => (
         <a href={link.href} class="header__link">{link.label}</a>
       ))}
     </nav>
   </div>
+
+  <nav
+    id="mobile-nav"
+    class="header__nav header__nav--mobile"
+    aria-label="Mobile navigation"
+    hidden
+    data-mobile-nav
+  >
+    <div class="container header__mobile-links">
+      {navLinks.map((link) => (
+        <a href={link.href} class="header__mobile-link">{link.label}</a>
+      ))}
+    </div>
+  </nav>
 </header>
+
+<script>
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+
+  if (menuToggle instanceof HTMLButtonElement && mobileNav instanceof HTMLElement) {
+    const setMenuOpen = (open: boolean) => {
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      mobileNav.hidden = !open;
+      menuToggle.textContent = open ? 'Close' : 'Menu';
+    };
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      setMenuOpen(!isOpen);
+    });
+
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
+    });
+  }
+</script>
 
 <style>
   .header {
@@ -85,11 +141,56 @@ const navLinks = [
     color: var(--accent-bright);
   }
 
+  .header__menu-button {
+    display: none;
+    border: 1px solid var(--border-strong);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
   .header__nav {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     justify-content: flex-end;
+  }
+
+  .header__nav--mobile {
+    display: none;
+    flex-direction: column;
+    padding: 0 0 16px;
+    border-top: 1px solid var(--border);
+    background: rgba(6, 8, 13, 0.98);
+  }
+
+  .header__nav--mobile:not([hidden]) {
+    display: flex;
+  }
+
+  .header__mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+  }
+
+  .header__mobile-link {
+    display: block;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .header__mobile-link:hover {
+    color: var(--accent-bright);
   }
 
   .header__link {
@@ -107,8 +208,14 @@ const navLinks = [
   }
 
   @media (max-width: 700px) {
-    .header__nav {
+    .header__nav--desktop {
       display: none;
+    }
+
+    .header__menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .header__icon {

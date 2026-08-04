@@ -54,7 +54,10 @@ const base = import.meta.env.BASE_URL;
           type="button"
           class="hero__tab hero__tab--active"
           role="tab"
+          id="hero-tab-prop"
           aria-selected="true"
+          aria-controls="hero-panel-prop"
+          tabindex="0"
           data-preview-tab="prop"
         >
           Player Prop
@@ -63,17 +66,33 @@ const base = import.meta.env.BASE_URL;
           type="button"
           class="hero__tab"
           role="tab"
+          id="hero-tab-game-line"
           aria-selected="false"
+          aria-controls="hero-panel-game-line"
+          tabindex="-1"
           data-preview-tab="game-line"
         >
           Game Line
         </button>
       </div>
 
-      <div class="hero__preview-panel hero__preview-panel--active" data-preview-panel="prop">
+      <div
+        class="hero__preview-panel hero__preview-panel--active"
+        id="hero-panel-prop"
+        role="tabpanel"
+        aria-labelledby="hero-tab-prop"
+        data-preview-panel="prop"
+      >
         <PropCardPreview />
       </div>
-      <div class="hero__preview-panel" data-preview-panel="game-line" hidden>
+      <div
+        class="hero__preview-panel"
+        id="hero-panel-game-line"
+        role="tabpanel"
+        aria-labelledby="hero-tab-game-line"
+        data-preview-panel="game-line"
+        hidden
+      >
         <GameLineCardPreview />
       </div>
     </div>
@@ -81,24 +100,46 @@ const base = import.meta.env.BASE_URL;
 </section>
 
 <script>
-  const tabs = document.querySelectorAll('[data-preview-tab]');
-  const panels = document.querySelectorAll('[data-preview-panel]');
+  const tabs = Array.from(document.querySelectorAll('[data-preview-tab]'));
+  const panels = Array.from(document.querySelectorAll('[data-preview-panel]'));
 
-  tabs.forEach((tab) => {
+  const activateTab = (target: string) => {
+    tabs.forEach((tab) => {
+      const isActive = tab.getAttribute('data-preview-tab') === target;
+      tab.classList.toggle('hero__tab--active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      tab.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.getAttribute('data-preview-panel') === target;
+      panel.classList.toggle('hero__preview-panel--active', isActive);
+      panel.hidden = !isActive;
+    });
+  };
+
+  tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
       const target = tab.getAttribute('data-preview-tab');
+      if (target) {
+        activateTab(target);
+      }
+    });
 
-      tabs.forEach((item) => {
-        const isActive = item.getAttribute('data-preview-tab') === target;
-        item.classList.toggle('hero__tab--active', isActive);
-        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      });
+    tab.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+        return;
+      }
 
-      panels.forEach((panel) => {
-        const isActive = panel.getAttribute('data-preview-panel') === target;
-        panel.classList.toggle('hero__preview-panel--active', isActive);
-        panel.hidden = !isActive;
-      });
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const nextIndex = (index + direction + tabs.length) % tabs.length;
+      const nextTab = tabs[nextIndex];
+      const target = nextTab.getAttribute('data-preview-tab');
+      if (target) {
+        activateTab(target);
+        nextTab.focus();
+      }
     });
   });
 </script>
