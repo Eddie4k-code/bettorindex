@@ -1,5 +1,5 @@
 ---
-import { propFaq, gameLineFaq, sharedFaq } from '../data/faq';
+import { propFaq, gameLineFaq, spotlightFaq, topMoversFaq, sharedFaq } from '../data/faq';
 ---
 
 <section class="section" id="faq">
@@ -24,6 +24,30 @@ import { propFaq, gameLineFaq, sharedFaq } from '../data/faq';
         <h3 class="faq-section__title">Game Lines</h3>
         <div class="faq-list">
           {gameLineFaq.map((item) => (
+            <details class="faq-item">
+              <summary class="faq-item__q">{item.question}</summary>
+              <p class="faq-item__a">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h3 class="faq-section__title">Spotlight</h3>
+        <div class="faq-list">
+          {spotlightFaq.map((item) => (
+            <details class="faq-item">
+              <summary class="faq-item__q">{item.question}</summary>
+              <p class="faq-item__a">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h3 class="faq-section__title">Top Movers</h3>
+        <div class="faq-list">
+          {topMoversFaq.map((item) => (
             <details class="faq-item">
               <summary class="faq-item__q">{item.question}</summary>
               <p class="faq-item__a">{item.answer}</p>

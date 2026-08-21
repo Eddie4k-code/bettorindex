@@ -1,0 +1,180 @@
+---
+---
+
+<div class="preview" aria-hidden="true">
+  <div class="preview__glow"></div>
+  <div class="preview__card">
+    <div class="preview__top">
+      <div>
+        <p class="preview__player">Shohei Ohtani</p>
+        <p class="preview__matchup">LAD @ SF · AWAY TONIGHT · 7:10 PM</p>
+      </div>
+      <span class="preview__market">Total Bases</span>
+    </div>
+
+    <div class="preview__hero">
+      <p class="preview__hero-delta">−1</p>
+      <p class="preview__hero-headline">Line moved down</p>
+    </div>
+
+    <div class="preview__agreement">
+      <p class="preview__agreement-label">All day</p>
+      <p class="preview__agreement-text">All 3 sportsbooks moved the line down</p>
+    </div>
+
+    <div class="preview__breakdown">
+      <div class="preview__breakdown-header">
+        <span>24-hour sportsbook breakdown</span>
+        <span class="preview__chevron">›</span>
+      </div>
+      <p class="preview__footnote">Snapshot-based · refreshes about every 15 min</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .preview {
+    position: relative;
+    width: min(100%, 360px);
+    margin: 0 auto;
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .preview__glow {
+    position: absolute;
+    inset: 10% 0 -10%;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.18), transparent 65%);
+    filter: blur(24px);
+    z-index: 0;
+  }
+
+  .preview__card {
+    position: relative;
+    z-index: 1;
+    padding: 18px;
+    border-radius: 20px;
+    background: linear-gradient(165deg, #141c28 0%, #0d1219 100%);
+    border: 1px solid rgba(74, 222, 128, 0.15);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  }
+
+  .preview__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .preview__player {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+
+  .preview__matchup {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .preview__market {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #1b2331;
+    color: #9ed8ff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    height: fit-content;
+  }
+
+  .preview__hero {
+    padding: 16px;
+    border-radius: 14px;
+    background: #101722;
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .preview__hero-delta {
+    margin: 0 0 4px;
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    color: #fda4af;
+    line-height: 1;
+  }
+
+  .preview__hero-headline {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .preview__agreement {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #17202d;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    margin-bottom: 10px;
+  }
+
+  .preview__agreement-label {
+    margin: 0 0 4px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #93a4bb;
+  }
+
+  .preview__agreement-text {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .preview__breakdown {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #101722;
+    border: 1px solid rgba(148, 163, 184, 0.08);
+  }
+
+  .preview__breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+  }
+
+  .preview__chevron {
+    color: #93a4bb;
+    font-size: 16px;
+    transform: rotate(90deg);
+  }
+
+  .preview__footnote {
+    margin: 0;
+    color: #7f8da3;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+</style>

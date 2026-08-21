@@ -1,7 +1,7 @@
 export const SITE_NAME = 'BettorIndex';
 
 export const DEFAULT_DESCRIPTION =
-  'Research NBA, MLB, and NFL player props and game lines with trends, leans, and best odds. Game lines use Trend Favors, Supports, Mixed Signals, or No Clear Trend. Available on iOS — Android coming soon. Decision aid, not a sportsbook.';
+  'Research NBA, MLB, and NFL player props, game lines, curated Spotlight props, and cross-book Top Movers with trends, leans, and best odds. Available on iOS — Android coming soon. Decision aid, not a sportsbook.';
 
 export const APP_STORE_URL = 'https://apps.apple.com/us/app/bettorindex/id6761634595';
 
