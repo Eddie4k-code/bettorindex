@@ -1,0 +1,110 @@
+---
+import SpotlightCardPreview from './SpotlightCardPreview.astro';
+
+const cardSections = [
+  {
+    title: 'Curated Feed',
+    description: 'Props with a Strong lean, Opportunity Market Read, and a hot recent hit rate on the leaned side.',
+  },
+  {
+    title: 'Home Preview Card',
+    description: 'See tonight\'s count at a glance with a View Spotlight CTA from the Home tab.',
+  },
+  {
+    title: 'Sport Toggle',
+    description: 'Switch between NBA, MLB, and NFL spotlights — same quality bar for every sport.',
+  },
+  {
+    title: 'Research-First',
+    description: 'Research-first curation — not picks. A decision aid, not a guarantee.',
+  },
+  {
+    title: 'Premium Full Feed',
+    description: 'Free users get a limited preview; Premium unlocks the full Spotlight feed in the app.',
+  },
+];
+---
+
+<section class="section section--surface" id="spotlight">
+  <div class="container">
+    <p class="section-label">Tonight's Prop Spotlights</p>
+    <h2 class="section-title">Curated props worth a closer look</h2>
+    <p class="section-subtitle">
+      Props flagged with a strong lean and hot recent form — research-first curation, not picks.
+    </p>
+
+    <div class="layout">
+      <div class="grid">
+        {cardSections.map((section, i) => (
+          <article class="card section-card">
+            <span class="section-card__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="section-card__title">{section.title}</h3>
+            <p class="section-card__desc">{section.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="preview-wrap">
+        <SpotlightCardPreview />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .layout {
+    display: grid;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .grid {
+    display: grid;
+    gap: 14px;
+  }
+
+  .section-card__num {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: rgba(52, 211, 153, 0.2);
+  }
+
+  .section-card__title {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+
+  .section-card__desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .preview-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .layout {
+      grid-template-columns: 1fr min(360px, 38%);
+      gap: 40px;
+      align-items: center;
+    }
+  }
+</style>

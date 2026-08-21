@@ -94,16 +94,67 @@ export const gameLineFaq: FaqItem[] = [
   },
 ];
 
+export const spotlightFaq: FaqItem[] = [
+  {
+    question: "What is Tonight's Prop Spotlight?",
+    answer:
+      "A curated feed of player props that meet a high bar: Strong lean, Opportunity Market Read, and a hot recent hit rate on the leaned side. It is research-first curation — not picks or guarantees.",
+  },
+  {
+    question: 'How is Spotlight different from Prop Markets?',
+    answer:
+      'Prop Markets is the full browseable feed for every prop we track. Spotlight narrows to props that pass all three quality filters — a short list worth a closer look. You can still research any prop in Prop Markets.',
+  },
+  {
+    question: 'What does "hot recent form" mean on Spotlight?',
+    answer:
+      'The leaned side has cleared at a strong rate in a short recent window — 10 games or 10 days for NBA and MLB, 3 games for NFL. It is one of three filters, not a standalone signal.',
+  },
+  {
+    question: 'Is Spotlight free?',
+    answer:
+      'Free users see a limited preview on Home and in the Spotlight feed. Premium unlocks the full feed in the app. The website shows static examples only — no live Spotlight data.',
+  },
+];
+
+export const topMoversFaq: FaqItem[] = [
+  {
+    question: 'What is Top Movers?',
+    answer:
+      'A dedicated tab showing player props and game lines with the biggest cross-book line and odds shifts. Games starting within the next 3 hours are included, ranked by all-day movement over the last 24 hours.',
+  },
+  {
+    question: 'What is the difference between Line Moves and Odds Moves?',
+    answer:
+      'Line Moves track how the point line changed (e.g. 25.5 → 26.0). Odds Moves track how the price changed in implied probability (e.g. -110 → -120). Switch tabs to see which type of shift mattered most.',
+  },
+  {
+    question: 'Does Top Movers mean live odds?',
+    answer:
+      'No. Top Movers is snapshot-based — we capture odds about every 15 minutes and compare movement over the last 24 hours. It is a research scanner, not a live odds board or picks service.',
+  },
+  {
+    question: 'What does "2 of 3 sportsbooks moved the line down" mean?',
+    answer:
+      'The All day row summarizes how many tracked books moved in the same direction over 24 hours. Expand the sportsbook breakdown to see each book\'s individual move.',
+  },
+  {
+    question: 'Why only games in the next 3 hours?',
+    answer:
+      'Top Movers focuses on markets moving ahead of tonight\'s slate. Longer-dated games are excluded so the feed stays actionable for research before tip-off.',
+  },
+];
+
 export const sharedFaq: FaqItem[] = [
   {
     question: 'What is BettorIndex?',
     answer:
-      'A sports betting research tool for NBA, MLB, and NFL. Research player props and team game lines with trends, leans, and best available odds. A decision aid — not a sportsbook or picks service.',
+      'A sports betting research tool for NBA, MLB, and NFL. Research player props, team game lines, curated Spotlight props, and cross-book Top Movers. A decision aid — not a sportsbook or picks service.',
   },
   {
     question: 'Which sports and books are supported?',
     answer:
-      'Prop Markets and Game Lines cover NBA, MLB, and NFL. We track BetMGM, DraftKings, FanDuel, and Fanatics. Not every market will have all four books available at the same time. College football (CFB) is coming soon, targeted for the start of the 2026–27 season.',
+      'Prop Markets, Game Lines, Spotlight, and Top Movers cover NBA, MLB, and NFL. We track BetMGM, DraftKings, FanDuel, and Fanatics. Not every market will have all four books available at the same time. College football (CFB) is coming soon, targeted for the start of the 2026–27 season.',
   },
   {
     question: 'When is CFB coming to BettorIndex?',
@@ -122,4 +173,10 @@ export const sharedFaq: FaqItem[] = [
   },
 ];
 
-export const allFaqItems: FaqItem[] = [...propFaq, ...gameLineFaq, ...sharedFaq];
+export const allFaqItems: FaqItem[] = [
+  ...propFaq,
+  ...gameLineFaq,
+  ...spotlightFaq,
+  ...topMoversFaq,
+  ...sharedFaq,
+];
